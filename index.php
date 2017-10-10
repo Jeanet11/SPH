@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+
+
 if(isset($_GET['p'])){
     $p = $_GET['p'];
 }else{
@@ -9,6 +11,9 @@ if(isset($_GET['p'])){
 ob_start();
 if($p === 'connexion'){
     include('./pages/connexion.php');
+}
+if($p === 'liste_clients'){
+    include('./pages/liste_clients.php');
 }
 
 if($p === 'nouveau_client'){
