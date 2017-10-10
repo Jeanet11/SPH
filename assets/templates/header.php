@@ -4,18 +4,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<!-- logo cliquable -->
 		<ul class="nav navbar-nav">
-			<li>  <a class="navbar-brand" href="?=liste_clients">
+			<li>  <a class="navbar-brand" href="?p=liste_clients">
 				<img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
 			</a></li>
 		</ul>
 		<!-- redirection vers la page d'ajout d'un client -->
-		<form method="GET" action="?p=creation_client" class="navbar-form navbar-left">
-			<button type="button" class="btn btn-success  ">Ajouter un client</button>
+		<form method="GET" class="navbar-form navbar-left">
+			<a href="?p=nouveau_client"><button type="button" class="btn btn-success  ">Ajouter un client</button></a>
 		</form>
 
 		<!-- redirection vers la page de déconnexion -->
-		<form method="GET" action="?p=deconnexion" class="navbar-form navbar-right">
-			<button type="button" class="btn btn-success  ">Se déconnecter</button>
+		<form method="GET" class="navbar-form navbar-right">
+			<a href="?p=deconnexion"><button type="button" class="btn btn-success  ">Se déconnecter</button></a>
 		</form>
 
 		<!-- moteur de recherche par nom -->
@@ -25,7 +25,6 @@
         </div>
         <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
       </form>
-
 	
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
