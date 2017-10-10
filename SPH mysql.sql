@@ -1,0 +1,52 @@
+create database SPH; 
+
+use SPH; 
+
+create table uti_utilisateur(
+
+uti_oid int auto_increment primary key,
+uti_pseudo varchar(50),
+uti_nom varchar(50),
+uti_prenom varchar(50),
+uti_mdp varchar(30),
+uti_autorisation int not null
+);
+
+create table cli_client(
+
+cli_oid int auto_increment primary key, 
+cli_nom varchar(50),
+cli_prenom varchar(50), 
+cli_email varchar(50), 
+cli_adresse varchar(50),
+cli_cp char,
+cli_ville char,
+cli_tel char(10),
+cli_commentaire text, 
+cli_provenance varchar(50)
+ );
+
+create table tra_travaux(
+
+tra_oid int auto_increment primary key,
+tra_titre varchar(50),
+tra_description varchar(255),
+tra_prix float, 
+tra_date_debut date, 
+tra_date_rappel date, 
+tra_mode_paiment varchar(50), 
+cli_oid int not null ,
+tra_devis text, 
+tra_facture text, 
+tra_pv text, 
+tra_photos text, 
+tra_garantie text 	
+);
+
+create table com_commentaire(
+
+com_oid int auto_increment primary key, 
+com_commentaire text, 
+tra_oid int not null, 
+uti_oid int not null 
+);
