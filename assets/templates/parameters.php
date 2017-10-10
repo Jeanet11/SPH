@@ -1,4 +1,3 @@
-
 <?php 
 $serveur = 'localhost';
 $utilisateur = 'root';
