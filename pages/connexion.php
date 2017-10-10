@@ -1,3 +1,7 @@
+<div class="text-center">
+<img class="logo" src="assets/images/test.png" alt="Logo SPH">
+</div>
+<!-- Formulaire de login -->
 <div class="container">
 	<div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -15,7 +19,7 @@
                                 <input class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <button type="button" class="btn btn-success btn-block">Login</button>
+                            <button type="button" class="btn btn-success btn-block">Valider</button>
                         </fieldset>
                     </form>
                 </div>
