@@ -1,3 +1,5 @@
+drop database if exists SPH;
+
 create database SPH; 
 
 use SPH; 
@@ -36,6 +38,8 @@ tra_date_debut date,
 tra_date_rappel date, 
 tra_mode_paiment varchar(50), 
 cli_oid int not null ,
+constraint FOREIGN KEY(cli_oid)
+references cli_client(cli_oid),
 tra_devis text, 
 tra_facture text, 
 tra_pv text, 
@@ -48,5 +52,9 @@ create table com_commentaire(
 com_oid int auto_increment primary key, 
 com_commentaire text, 
 tra_oid int not null, 
-uti_oid int not null 
+uti_oid int not null, 
+constraint FOREIGN KEY(tra_oid) 
+references tra_travaux(tra_oid), 
+constraint FOREIGN KEY(uti_oid)
+references uti_utilisateur(uti_oid)
 );
