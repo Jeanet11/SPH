@@ -1,10 +1,12 @@
-<div class="text-center">
+<!-- Logo de SPH -->
+<div class="container">
+<div class="row text-center">
 <img class="logo" src="assets/images/test.png" alt="Logo SPH">
 </div>
+
 <!-- Formulaire de login -->
-<div class="container">
 	<div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-sm-4 col-sm-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
                     <h3 class="panel-title">Identification</h3>
