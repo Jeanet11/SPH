@@ -14,7 +14,9 @@ if($p === 'connexion'){
 if($p === 'nouveau_client'){
     include('./pages/creation_client.php');
 }
-
+if($p === 'fiche_client'){
+    include('./pages/fiche_client.php');
+}
 if($p === 'test'){
 	include('./pages/test_navbar.php');
 }
