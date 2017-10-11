@@ -33,6 +33,11 @@ if($p === 'pdf'){
     die;
 }
 
+if($p === 'fichier'){
+    include('./pages/upload_fichier.php');
+    die;
+}
+
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }

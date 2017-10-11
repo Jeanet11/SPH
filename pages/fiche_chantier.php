@@ -28,8 +28,31 @@ catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 };
-
-
+//creation d'une fonction pour verifier si il y a un fichier ou non, la cas present il l'ouvre, cas contraire proposition d'upload
+function verif_exist ($type, $id){
+$file = dirname(__DIR__)."/documents/".$id."/pdf/".$type.".pdf";
+if (file_exists($file)) {
+    return '<li">
+    <ul class="list-inline">
+    <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
+    <li class="list-group-item btn btn-success">
+    <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
+    </li>
+    </ul>
+    </li>';
+} else {
+    return '<form method="post" action="?p=fichier" enctype="multipart/form-data">
+    <li>
+    <ul class="list-inline">
+    <input type="hidden" name="type" value="'.$type.'" />
+    <input type="hidden" name="id" value="'.$id.'" />
+    <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
+    <li class="list-group-item"><input type="file" name="'.$type.'" /></li>
+    <li class="list-group-item"><input type="submit" name="submit" value="Enregistrer" /></li>
+    </ul>
+    </li></form>';
+};
+};
 ?>
 <div class="container">
     <ul class="list-inline col-sm-12">
@@ -55,11 +78,11 @@ catch (Exception $e)
         <textarea disabled class="list-group-item col-xs-12" rows="9"><?= $result_info_chantier["tra_description"] ?></textarea>
     </ul> 
     <ul class="list-inline col-sm-12">
-        <li class="list-group-item"><a class="btn btn-warning" href="?p=pdf&id=<?= $id_chantier ?>&type=devis" target="_blank">Devis</a></li>
-        <li class="list-group-item"><a class="btn btn-warning" href="?p=pdf&id=<?= $id_chantier ?>&type=facture" target="_blank">Facture</a></li>
-        <li class="list-group-item"><a class="btn btn-warning" href="?p=pdf&id=<?= $id_chantier ?>&type=pv" target="_blank">PV</a></li>
-        <li class="list-group-item"><a class="btn btn-warning" href="?p=pdf&id=<?= $id_chantier ?>&type=garantie" target="_blank">Garantie</a></li>
-        <li class="list-group-item"><a class="btn btn-warning" href="?p=photo&id=<?= $id_chantier ?>" target="_blank">Photos</a></li>        
+        <?= verif_exist("devis",$id_chantier) ?>
+        <?= verif_exist("facture",$id_chantier) ?>
+        <?= verif_exist("pv",$id_chantier) ?>
+        <?= verif_exist("garantie",$id_chantier) ?>
+        
     </ul> 
 </div>
 
