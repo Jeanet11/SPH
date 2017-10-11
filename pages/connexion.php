@@ -18,10 +18,12 @@ $row = 1;
 
             header('Location: ?p=liste_clients');
         } else {
+            
         }
         }
     }
 ?>
+
 
 <!-- Logo de SPH -->
 <div class="container">
