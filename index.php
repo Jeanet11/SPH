@@ -5,7 +5,7 @@ session_start();
 
 if(isset($_GET['p'])){
     $p = $_GET['p'];
-}else{
+} else{
     $p = 'connexion';
 }
 ob_start();
@@ -19,11 +19,9 @@ if($p === 'liste_clients'){
 if($p === 'nouveau_client'){
     include('./pages/creation_client.php');
 }
+
 if($p === 'fiche_client'){
     include('./pages/fiche_client.php');
-}
-if($p === 'test'){
-	include('./pages/test_navbar.php');
 }
 
 if($p === 'deconnexion'){

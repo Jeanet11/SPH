@@ -1,9 +1,10 @@
 #logo_navbar 	{
-	width: 60px;
-	height: auto;
-	padding-bottom: 40px;
+	width: auto;
+	height: 45px;
+	position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
 }
 
-/*nav {
-	height: 70px;
-}*/

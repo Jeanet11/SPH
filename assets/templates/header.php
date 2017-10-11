@@ -1,25 +1,29 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default ">
   <div class="container-fluid">
-      
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  
+  	<ul class="col-md-12 col-lg-1 nav navbar-nav">
+  		<li>  
+  			<a class="navbar-brand" href="?p=liste_clients">
+  				<img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
+  			</a>
+  		</li>
+  	</ul>
+	      
+    <div class="row collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<!-- logo cliquable -->
-		<ul class="nav navbar-nav">
-			<li>  <a class="navbar-brand" href="?p=liste_clients">
-				<img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
-			</a></li>
-		</ul>
+		
 		<!-- redirection vers la page d'ajout d'un client -->
-		<form method="GET" class="navbar-form navbar-left">
+		<form method="GET" class="navbar-form navbar-left col-md-12 col-lg-4">
 			<a href="?p=nouveau_client"><button type="button" class="btn btn-success  ">Ajouter un client</button></a>
 		</form>
 
 		<!-- redirection vers la page de déconnexion -->
-		<form method="GET" class="navbar-form navbar-right">
+		<form method="GET" class="navbar-form navbar-right col-md-12 col-lg-3">
 			<a href="?p=deconnexion"><button type="button" class="btn btn-success  ">Se déconnecter</button></a>
 		</form>
 
 		<!-- moteur de recherche par nom -->
-      <form class="navbar-form navbar-right">
+      <form class="navbar-form navbar-right col-md-12 col-lg-5 visible-lg">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Rechercher par nom" size="50">
         </div>
