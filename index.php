@@ -24,12 +24,6 @@ if($p === 'fiche_client'){
     include('./pages/fiche_client.php');
 }
 
-
-if($p === 'liste_clients'){
-	include('./pages/liste_clients.php');
-
-}
-
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
