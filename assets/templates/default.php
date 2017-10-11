@@ -7,6 +7,7 @@
 
     <link rel="icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/creation_chantier.css">
 
     <title>SPH</title>
     
