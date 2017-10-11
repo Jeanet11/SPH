@@ -23,6 +23,9 @@ if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
 
+if($p === 'recherche_client') {
+	include('./pages/recherche_client.php');
+}
 
 $content = ob_get_clean();
 include('assets/templates/default.php');

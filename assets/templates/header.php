@@ -23,9 +23,9 @@
 		</form>
 
 		<!-- moteur de recherche par nom -->
-      <form class="navbar-form navbar-right col-md-12 col-lg-5 visible-lg">
+      <form class="navbar-form navbar-right col-md-12 col-lg-5 visible-lg" method="POST" action="?p=recherche_client">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Rechercher par nom" size="50">
+          <input type="text" class="form-control" placeholder="Rechercher par nom" size="50" id="nom">
         </div>
         <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-search"></i></button>
       </form>
