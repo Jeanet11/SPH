@@ -24,6 +24,15 @@ if($p === 'fiche_client'){
     include('./pages/fiche_client.php');
 }
 
+if($p === 'fiche_chantier'){
+    include('./pages/fiche_chantier.php');
+}
+
+if($p === 'pdf'){
+    include('./pages/pdf.php');
+    die;
+}
+
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
