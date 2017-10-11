@@ -16,7 +16,7 @@ $row = 1;
             $_SESSION['uti_pseudo'] = $pseudo;
             $_SESSION['uti_oid'] = $row['uti_oid'];
 
-            header('Location: pages/liste_clients.php');
+            header('Location: ?p=liste_clients');
         } else {
         }
         }
