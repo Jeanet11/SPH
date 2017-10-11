@@ -3,5 +3,6 @@ if (empty($_SESSION['uti_pseudo'])){
     header('Location: index.php');
 }
 ?>
-
-<h3>klsqjdljqsdl</h3>
+<div class="text-center">
+<h3>Liste des clients</h3>
+</div>
