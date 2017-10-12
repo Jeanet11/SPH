@@ -15,8 +15,15 @@
 </head>
 <body>
 
-    <?php include(__DIR__.'/header.php'); ?>
-    <?= $content ?>
+<?php
+    if($p !== 'connexion') {
+        include(__DIR__.'/header.php'); 
+        echo $content; 
+    } else { 
+        echo $content;
+    }
+
+    ?>
     
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
