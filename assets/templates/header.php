@@ -3,7 +3,7 @@
  <!--  logo dans un ul -->
   	<ul class="col-xs-4  col-lg-1 nav navbar-nav">
   		<li>  
-  			<a class="navbar-brand" href="?p=liste_clients">
+  			<a class="navbar-brand" href="?p=liste_chantier">
   				<img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
   			</a>
   		</li>
