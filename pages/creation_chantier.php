@@ -50,32 +50,31 @@ $date_mtn = date('Y-m-d');
 <div class="container">
     <form action="" method="post">
 
-  
-    <h2 class="text-center">nom du chantier<small><input type="text" class="form-control input-lg" id="nom_du_chantier"  name="nom_du_chantier" value=" "></small></h2>
+    <h3 class="text-center">nom du chantier<small><input type="text" class="form-control input-lg" id="nom_du_chantier"  name="nom_du_chantier" value=" "></small></h2>
     
         
         
         <div class="row">
-            <div class="col-xs-4"><label class="col-xs-4" for="date">date</label>
+            <div class="col-sm-4"><label class="col-sm-4" for="date">date</label>
             <input type="text" class="form-control input-lg" id="date"  name="date" value="<?=$date_mtn ?>"></div>
-            <div class="col-xs-4 col-xs-offset-4"><label class="col-xs-offset-4" for="mode_de_paiment">mode de paiment</label><input type="text" class="form-control input-lg" id="mode_de_paiment"  name="mode_de_paiment" value=" "></div>
+            <div class="col-sm-4 col-sm-offset-4"><label class="col-sm-offset-4" for="mode_de_paiment">mode de paiment</label><input type="text" class="form-control input-lg" id="mode_de_paiment"  name="mode_de_paiment" value=" "></div>
             </div>
             
                     
             <div class="row">
-                <div class="col-xs-4"><label class="col-xs-4" for="travaux">travaux</label><textarea class="form-control input-lg" id="travaux" name="travaux" rows="5"></textarea></div>
-                <div class="col-xs-4 col-xs-offset-4"> 
-                <input class="col-xs-offset-4" type="submit" value="envoyer"></div>
+                <div class="col-sm-4"><label class="col-sm-4" for="travaux">travaux</label><textarea class="form-control input-lg" id="travaux" name="travaux" rows="5"></textarea></div>
+                <div class="col-sm-4 col-sm-offset-4"> 
+                <input class="col-sm-offset-4" type="submit" value="envoyer"></div>
             </div>
 
 
             <div class ="row">
-            <div class="col-xs-4"><label class="col-xs-4" for="montant">montant</label><input type="text" class="form-control input-lg" id="montant" name="montant"></div>
+            <div class="col-sm-4"><label class="col-sm-4" for="montant">montant</label><input type="text" class="form-control input-lg" id="montant" name="montant"></div>
             </div>
             
             
                 <div class ="row">
-                <div class="col-xs-12"><label class="col-xs-12"  for="notes">notes</label><textarea class="form-control input-lg" id="notes" name="notes" rows="8"></textarea> 
+                <div class="col-sm-12"><label class="col-sm-12"  for="notes">notes</label><textarea class="form-control input-lg" id="notes" name="notes" rows="8"></textarea> 
                     </div>
                     </div>
                             
