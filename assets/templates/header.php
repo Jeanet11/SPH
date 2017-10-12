@@ -16,12 +16,12 @@
 		<!-- logo cliquable -->
 		
 		<!-- redirection vers la page d'ajout d'un client -->
-  		<form method="GET" class="navbar-form navbar-left   col-xs-4  col-lg-4">
+  		<form method="GET" class="navbar-form navbar-left   col-xs-3  col-lg-4">
   			<a href="?p=nouveau_client"><button type="button" class="btn btn-success  ">Ajouter un client</button></a>
   		</form>
       </div>
 		<!-- redirection vers la page de déconnexion -->
-  		<form method="GET" class="navbar-form navbar-right  col-xs-4  col-lg-3">
+  		<form method="GET" class="navbar-form navbar-right  col-xs-offset-2 col-xs-3  col-lg-3">
   			<a href="?p=deconnexion"><button type="button" class="btn btn-success  ">Se déconnecter</button></a>
   		</form>
 
