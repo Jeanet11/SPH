@@ -68,11 +68,11 @@ if (file_exists($file)) {
         <li class="list-group-item">Moyen de paiement</li>
     </ul>
     <ul class="list-group col-sm-4 col-xs-12">
-        <li class="list-group-item"><?= $result_info_chantier["tra_titre"] ?></li>
-        <li class="list-group-item"><?= $result_info_chantier["tra_description"] ?></li>
-        <li class="list-group-item"><?= $result_info_chantier["tra_prix"] ?>€</li>
-        <li class="list-group-item"><?= $result_info_chantier["date"] ?></li>
-        <li class="list-group-item"><?= $result_info_chantier["tra_mode_paiment"] ?></li>
+        <li class="list-group-item" id="titre"><?= $result_info_chantier["tra_titre"] ?></li>
+        <li class="list-group-item" id="description"><?= $result_info_chantier["tra_description"] ?></li>
+        <li class="list-group-item" id="prix"><?= $result_info_chantier["tra_prix"] ?>€</li>
+        <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>
+        <li class="list-group-item" id="paiement"><?= $result_info_chantier["tra_mode_paiment"] ?></li>
     </ul> 
     <ul class="list-group col-sm-4 col-xs-12">
         <textarea disabled class="list-group-item col-xs-12" rows="9"><?= $result_info_chantier["tra_description"] ?></textarea>
@@ -85,4 +85,6 @@ if (file_exists($file)) {
         
     </ul> 
 </div>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="assets/js/fiche_chantier.js"></script>
 
