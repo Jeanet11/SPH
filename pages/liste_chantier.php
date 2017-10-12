@@ -20,7 +20,7 @@ $nbArt = (INT)$data['nbArt'];
 // echo $nbArt;
 // print_r($nbArt);
 
-$perPage = 5;
+$perPage = 4;
 $nbPage = ceil($nbArt/$perPage);
 // echo $nbPage;
 
@@ -93,7 +93,7 @@ while  ($donnees = $reponse->fetch()){
     $curMonth = $donnees['mois'];
     $curYear = $donnees['annee'];
     $table .= "
-    <a href='#' class='inLine'>
+    <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
         <li class='col-sm-1 col-xs-12'>" . $donnees['tra_date_debut'] . "</li>
         <li class='col-sm-2 col-xs-12 hidden-xs text-uppercase'>" . $donnees['cli_nom'] . "</li>
@@ -108,7 +108,9 @@ while  ($donnees = $reponse->fetch()){
     </a>";
 }
 afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
+echo "<div class='text-center'>";
 for($i=1; $i<=$nbPage; $i++){
-    echo " <a href=\"?p=liste_chantier&d=$i\">$i</a> /";
+    echo "<a class='pagination btn btn-success' href=\"?p=liste_chantier&d=$i\">$i</a> ";
 }
+echo "</div>";
 ?>
