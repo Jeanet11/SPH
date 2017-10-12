@@ -1,45 +1,4 @@
-
-                                <!-- PARTIE HTML -->
-
-
-<div class="container">
-    <form action="" method="post">
-        
-                                
-                    <div class="row">
-                    <div class="col-md-4">DATE :<input type="text" class="form-control input-lg" id="inputSuccess4" aria-describedby="inputSuccess4Status" name="DATE"></div>
-                    <div class="col-md-4 col-md-offset-4">MODE DE REGLEMENT :<input type="text" class="form-control input-lg" id="inputSuccess4" aria-describedby="inputSuccess4Status" name="MODE_DE_REGLEMENT"></div>
-                    </div>
-                    
-                            
-                    <div class="row">
-                    <div class="col-md-4">TRAVAUX :<textarea class="form-control input-lg" name="TRAVAUX" rows="2"></textarea></div>
-                    <div class="col-md-4 col-md-offset-4"><button type="button" class="btn btn-success btn-lg" name= "Enregistrer_le_chantier">Enregistrer le chantier</button></div>
-                    </div>
-            
-            
-                    <div class ="row">
-                    <div class="col-md-4">MONTANT :<input type="text" class="form-control input-lg" id="inputSuccess4" aria-describedby="inputSuccess4Status" name="Montant"></div>
-                    </div>
-                    
-                    
-                        <div class ="row">
-                        <div class="control-group">
-                            <label class="control-group" for=
-                            "inputNote">NOTES :</label>
-                            <textarea class="form-control input-lg" name="NOTES" rows="8"></textarea>    
-                            </div>
-                            </div>
-                    
-                            </form>
-                                </div>
-            
-
-            
-                                        <!--PARTIE PHP  -->
-
-
-
+                                                            <!--PARTIE PHP  -->
 <?php
 
 if (!empty($_POST))
@@ -48,20 +7,20 @@ if (!empty($_POST))
 
 include('assets/templates/tryCatch.php');
 
-    $date_debut = htmlspecialchars($_POST['date de debut']); 
-    $description = htmlspecialchars($_POST['description']);
-    $mode_de_paiment = htmlspecialchars($_POST['mode de paiment']);
-    $facture = htmlspecialchars($_POST['facture']);
-    $photos = htmlspecialchars($_POST['photos']); 
+    $id_client = htmlspecialchars($_GET['id']);
+    $titre = htmlspecialchars($_POST['nom_du_chantier']);
+    $date_debut = htmlspecialchars($_POST['date']); 
+    $date_rappel = htmlspecialchars($_POST['date']); 
+    $description = htmlspecialchars($_POST['travaux']);
+    $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
+    $prix = htmlspecialchars($_POST['montant']);
 
+$sql_creation_chantier = sprintf('INSERT INTO SPH.tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
+VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s")', $id_client, $titre, $date_debut, $date_rappel, $description, $mode_de_paiment, $prix);
 
-$sql_creation_chantier = sprintf("INSERT INTO 'SPH' '.' 'tra_travaux'('tra_date_debut', 'tra_description', 'tra_mode_paiment', 'tra_facture', 'tra_photos') 
-VALUES ('%s', '%s', '%s', '%s' , '%s')" ,
-    $date_debut, $description, $mode_de_paiment, $facture, $photos);
-
-    try
+    try 
     {
-    
+        // echo $sql_creation_chantier;
         $bdd->query($sql_creation_chantier);
     
     }
@@ -79,7 +38,53 @@ VALUES ('%s', '%s', '%s', '%s' , '%s')" ,
     
     };
     
+$date_mtn = date('Y-m-d');
     
     
+    ?>
+    
+
+                                <!-- PARTIE HTML -->
+
+
+<div class="container">
+    <form action="" method="post">
+
+  
+    <h2 class="text-center">nom du chantier<small><input type="text" class="form-control input-lg" id="nom_du_chantier"  name="nom_du_chantier" value=" "></small></h2>
+    
+        
+        
+        <div class="row">
+            <div class="col-xs-4"><label class="col-xs-4" for="date">date</label>
+            <input type="text" class="form-control input-lg" id="date"  name="date" value="<?=$date_mtn ?>"></div>
+            <div class="col-xs-4 col-xs-offset-4"><label class="col-xs-offset-4" for="mode_de_paiment">mode de paiment</label><input type="text" class="form-control input-lg" id="mode_de_paiment"  name="mode_de_paiment" value=" "></div>
+            </div>
+            
+                    
+            <div class="row">
+                <div class="col-xs-4"><label class="col-xs-4" for="travaux">travaux</label><textarea class="form-control input-lg" id="travaux" name="travaux" rows="5"></textarea></div>
+                <div class="col-xs-4 col-xs-offset-4"> 
+                <input class="col-xs-offset-4" type="submit" value="envoyer"></div>
+            </div>
+
+
+            <div class ="row">
+            <div class="col-xs-4"><label class="col-xs-4" for="montant">montant</label><input type="text" class="form-control input-lg" id="montant" name="montant"></div>
+            </div>
+            
+            
+                <div class ="row">
+                <div class="col-xs-12"><label class="col-xs-12"  for="notes">notes</label><textarea class="form-control input-lg" id="notes" name="notes" rows="8"></textarea> 
+                    </div>
+                    </div>
+                            
+                            
+    </form>
+</div>      
+                                
+                    
+            
+
     
     
