@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
+
+    <link rel="stylesheet" href="assets/css/liste_chantier.css">
+
     <link rel="stylesheet" href="assets/css/fiche_client.css">
+
     <link rel="stylesheet" href="assets/css/fiche_chantier.css">
+
     <title>SPH</title>
     
 </head>
