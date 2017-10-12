@@ -21,7 +21,7 @@ function upload($index, $destination, $dossier_destination, $maxsize=FALSE, $ext
         return move_uploaded_file($_FILES[$index]['tmp_name'],$destination);
 }
 
-upload($type,$chemin, $dossier, FALSE, array("pdf"));
+upload($type,$chemin, $dossier, FALSE, array("pdf","PDF"));
 header("location: ?p=fiche_chantier&id=".$id);
 
 

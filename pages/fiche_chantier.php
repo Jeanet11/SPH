@@ -113,6 +113,13 @@ if (!empty($_POST)){
             <?= verif_exist("facture",$id_chantier) ?>
             <?= verif_exist("pv",$id_chantier) ?>
             <?= verif_exist("garantie",$id_chantier) ?>
+
+            <li>
+                <ul class="list-inline">
+                <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">photos</li>
+                <li class="list-group-item btn btn-success"> <a href="?p=galerie&id=<?= $id_chantier ?>">Acceder aux photos</a></li>
+                </ul>
+            </li>
         </ul> 
         <form action="" method="post">
             <ul class="list-group list-unstyled col-sm-6 col-xs-12">
@@ -123,7 +130,6 @@ if (!empty($_POST)){
         </form>
     </section>
     <section class="col-sm-12 contour">
-    </section>
         <ul class="list-inline list-unstyled col-xs-12">
 <?php
     foreach ($result_affiche_commentaire as $value) {
@@ -133,6 +139,7 @@ if (!empty($_POST)){
     };
 ?>
         </ul>
+    </section>
 </div>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="assets/js/fiche_chantier.js"></script>
