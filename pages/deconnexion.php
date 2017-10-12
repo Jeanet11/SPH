@@ -1,3 +1,3 @@
-<?php
+<?php 
 session_destroy();
-header("Location: ?p=home");
+header("Location: ?p=connexion");
