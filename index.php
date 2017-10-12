@@ -12,22 +12,24 @@ ob_start();
 if($p === 'connexion'){
     include('./pages/connexion.php');
 }
-if($p === 'liste_clients'){
-    include('./pages/liste_clients.php');
+if($p === 'liste_chantier'){
+    include('./pages/liste_chantier.php');
 }
+
 
 if($p === 'nouveau_client'){
     include('./pages/creation_client.php');
 }
 
+
 if($p === 'fiche_client'){
     include('./pages/fiche_client.php');
 }
 
+
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
-
 
 $content = ob_get_clean();
 include('assets/templates/default.php');
