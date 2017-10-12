@@ -4,7 +4,7 @@ if (empty($_SESSION['uti_pseudo'])){
 }
 ?>
 <div class="text-center">
-<h3>Liste des clients</h3>
+<h3>Liste des chantiers</h3>
 </div>
 
 

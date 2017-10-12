@@ -12,8 +12,8 @@ ob_start();
 if($p === 'connexion'){
     include('./pages/connexion.php');
 }
-if($p === 'liste_clients'){
-    include('./pages/liste_clients.php');
+if($p === 'liste_chantier'){
+    include('./pages/liste_chantier.php');
 }
 
 
