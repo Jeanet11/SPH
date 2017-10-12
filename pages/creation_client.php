@@ -35,7 +35,14 @@ if (!empty($_POST)){
     //Création de la requete
     $sql_dernier_client = "SELECT cli_oid FROM cli_client ORDER BY cli_oid DESC LIMIT 1";
     //Exécution de la requete
-    $result_dernier_client = $bdd->query($sql_dernier_client)->fetch();
+    try
+    {
+        $result_dernier_client = $bdd->query($sql_dernier_client)->fetch();
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    };
     //Redirection de la page
     header("Location: ?p=fiche_client&id=".$result_dernier_client['cli_oid']);
 };
@@ -77,7 +84,7 @@ if (!empty($_POST)){
                 <input type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
             </div>
             <div class="col-sm-offset-1 col-sm-2">
-                <button type="submit" class="btn btn-success">Enregistrer le nouveau client</button>
+                <button type="submit" class="btn btn-success hidden-xs">Enregistrer le nouveau client</button>
             </div>
         </section>
         <section class="row">
@@ -96,5 +103,8 @@ if (!empty($_POST)){
                 <textarea name="note" id="note" class="form-control"  rows="10"></textarea>
             </div>
         </section>
+        <div class="col-sm-offset-1 col-sm-2">
+            <button type="submit" class="btn btn-success visible-xs">Enregistrer le nouveau client</button>
+        </div>
     </form> 
 </div>

@@ -20,6 +20,13 @@ if($p === 'liste_chantier'){
 if($p === 'nouveau_client'){
     include('./pages/creation_client.php');
 }
+
+
+if($p === 'fiche_client'){
+    include('./pages/fiche_client.php');
+}
+
+
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
