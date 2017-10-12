@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/fiche_client.css">
 >>>>>>> f79184ef550b72f56456013006982673e30dcc92
 
+    <link rel="stylesheet" href="assets/css/fiche_chantier.css">
+
     <title>SPH</title>
     
 </head>

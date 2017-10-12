@@ -32,6 +32,21 @@ if($p === 'fiche_client'){
 }
 
 
+if($p === 'fiche_chantier'){
+    include('./pages/fiche_chantier.php');
+}
+
+if($p === 'pdf'){
+    include('./pages/pdf.php');
+    die;
+}
+
+if($p === 'fichier'){
+    include('./pages/upload_fichier.php');
+    die;
+}
+
+
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }

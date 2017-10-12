@@ -19,7 +19,7 @@ catch (Exception $e)
 };
 
 //requete sql pour récupéré les infos chantier
-$sql_info_chantier = sprintf("SELECT tra_oid, tra_titre, tra_date_debut  FROM tra_travaux WHERE cli_oid = %d ORDER BY tra_date_debut DESC", $id);
+$sql_info_chantier = sprintf("SELECT tra_oid, tra_titre, DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
 //execute la requete sql du chantier
 try
 {
@@ -53,9 +53,9 @@ if(!empty($_POST)){
     $email_update = htmlspecialchars($_POST["email"]);
     $note_update = htmlspecialchars($_POST["note"]);
     //requete sql pour mettre à jour les infos client
-    $sql_update_client = sprintf("UPDATE `SPH`.`cli_client` SET `cli_nom`='%s', `cli_prenom`='%s', 
-    `cli_email`='%s', `cli_adresse`='%s', `cli_cp`='%s', `cli_ville`='%s', `cli_tel`='%s', 
-    `cli_commentaire`='%s' WHERE `cli_oid`= %d",
+    $sql_update_client = sprintf('UPDATE SPH.cli_client SET cli_nom="%s", cli_prenom="%s", 
+    cli_email="%s", cli_adresse="%s", cli_cp="%s", cli_ville="%s", cli_tel="%s", 
+    cli_commentaire="%s" WHERE cli_oid= %d',
     $nom_update, $prenom_update, $email_update, $adresse_update, $cp_update, $ville_update, $tel_update, $note_update, $id );
     //execute la requete sql de l'update client
     try
@@ -66,7 +66,6 @@ if(!empty($_POST)){
     {
         die('Erreur : ' . $e->getMessage());
     };
-    $_SESSION["info_client"] = "Les informations sont mises à jour";
     header("Location: ?p=fiche_client&id=".$id);
 };
 ?>
@@ -115,7 +114,7 @@ if(!empty($_POST)){
                     '<a href="?p=fiche_chantier&id='.$value["tra_oid"].'"><ul class="list-inline">
                         <li class="list-group-item col-xs-2">'.$value["tra_oid"].'</li>  
                         <li class="list-group-item col-xs-6">'.$value["tra_titre"].'</li>  
-                        <li class="list-group-item col-xs-4">'.$value["tra_date_debut"].'</li>           
+                        <li class="list-group-item col-xs-4">'.$value["date"].'</li>           
                     </ul></a>';
             }
             ?>
