@@ -20,7 +20,7 @@ $nbArt = (INT)$data['nbArt'];
 // echo $nbArt;
 // print_r($nbArt);
 
-$perPage = 4;
+$perPage = 20;
 $nbPage = ceil($nbArt/$perPage);
 // echo $nbPage;
 
@@ -68,13 +68,13 @@ function afficherBlocMois($mois, $annee, $table){
 
 $tableDebut = "
         <ul class='list-inline hidden-xs' id='columnTab'>
-            <li class='col-sm-1'>Date</li>
+            <li class='col-sm-2'>Date</li>
             <li class='col-sm-2'>Nom</li>
             <li class='col-sm-2'>Prénom</li>
             <li class='col-sm-2'>Email</li>
-            <li class='col-sm-1'>Cp</li>
+            <li class='col-sm-2'>Cp</li>
             <li class='col-sm-2'>Ville</li>
-            <li class='col-sm-2'>Téléphone</li>
+
         </ul>
 ";
 
@@ -95,14 +95,14 @@ while  ($donnees = $reponse->fetch()){
     $table .= "
     <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
-        <li class='col-sm-1 col-xs-12'>" . $donnees['tra_date_debut'] . "</li>
+        <li class='col-sm-2 col-xs-12'>" . $donnees['tra_date_debut'] . "</li>
         <li class='col-sm-2 col-xs-12 hidden-xs text-uppercase'>" . $donnees['cli_nom'] . "</li>
         <li class='col-sm-2 col-xs-12 hidden-xs'>" . $donnees['cli_prenom'] . "</li>
         <li class='col-sm-2 col-xs-12 visible-xs'><span class='text-uppercase'><strong>" . $donnees['cli_nom']. "</strong></span> ". $donnees['cli_prenom'] . "</li>        
         <li class='col-sm-2 col-xs-12'>" . $donnees['cli_email'] . "</li>
-        <li class='col-sm-1 col-xs-3''>" . $donnees['cli_cp'] . "</li>
+        <li class='col-sm-2 col-xs-3''>" . $donnees['cli_cp'] . "</li>
         <li class='col-sm-2 col-xs-8''>" . $donnees['cli_ville'] . "</li>
-        <li class='col-sm-2 col-xs-12''>" . $donnees['cli_tel'] . "</li>
+
     </ul>
     <div class='col-xs-12 visible-xs' id='hoverL'></div>
     </a>";
@@ -110,7 +110,11 @@ while  ($donnees = $reponse->fetch()){
 afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
 echo "<div class='text-center'>";
 for($i=1; $i<=$nbPage; $i++){
+if($i==$cPage){
+    echo "<span class='mayuri'>$i</span>";
+}else{
     echo "<a class='pagination btn btn-success' href=\"?p=liste_chantier&d=$i\">$i</a> ";
+    }
 }
 echo "</div>";
 ?>
