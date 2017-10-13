@@ -34,7 +34,7 @@ VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s")', $id_client, $titre, $date_d
     };  
 
 
-    header("Localisation: ?p=creation_chantier");
+    header("Location: ?p=fiche_client&id=".$id_client);
     
     };
     
