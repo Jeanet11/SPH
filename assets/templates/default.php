@@ -8,16 +8,13 @@
 
     <link rel="icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/creation_chantier.css">
-=======
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
 
     <link rel="stylesheet" href="assets/css/liste_chantier.css">
 
     <link rel="stylesheet" href="assets/css/fiche_client.css">
->>>>>>> f79184ef550b72f56456013006982673e30dcc92
 
     <link rel="stylesheet" href="assets/css/fiche_chantier.css">
 
