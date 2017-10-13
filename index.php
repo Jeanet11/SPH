@@ -12,6 +12,11 @@ ob_start();
 if($p === 'connexion'){
     include('./pages/connexion.php');
 }
+
+if($p === 'creation_chantier'){
+    include('./pages/creation_chantier.php');
+}
+
 if($p === 'liste_chantier'){
     include('./pages/liste_chantier.php');
 }
@@ -47,9 +52,11 @@ if($p === 'deconnexion'){
 }
 
 
+
 if($p === 'recherche_client') {
 	include('./pages/recherche_client.php');
 }
+
 
 
 $content = ob_get_clean();
