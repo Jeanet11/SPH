@@ -41,7 +41,10 @@ ORDER BY tra_date_debut desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
 
 
 <?php
-
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 function afficherBlocMois($mois, $annee, $table){
     $num2mois = array(1=>'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
     'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');

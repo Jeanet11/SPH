@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 //Gestion chantier
 //recupération de l'id du chantier
 $id_chantier = htmlspecialchars((int)$_GET["id"]);

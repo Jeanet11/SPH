@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 //-------------------DEBUT TRAITEMENT POUR AFFICHAGE INFO CLIENT ET CHANTIER-------------------
 //recupération de l'id client
 $id = htmlspecialchars((int)$_GET["id"]);
@@ -105,7 +109,7 @@ if(!empty($_POST)){
         </section>
         <div class="text-center visible-xs">
             <input class="btn btn-success" type="submit" value="Enregistrer les modifications du client"><br /><br />
-            <a href="#"><button class="btn btn-warning">Ajouter un chantier</button></a>
+            <a class="btn btn-warning" href="?p=creation_chantier&id=<?= $id ?>">Ajouter un chantier</a>    
         </div>
         <section class="col-sm-offset-2 col-sm-6 col-xs-12">
             <?php

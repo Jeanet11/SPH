@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 // PARTIE PHP
 if (!empty($_POST)){
     //include de la page de connexion a la bdd ($bdd)
