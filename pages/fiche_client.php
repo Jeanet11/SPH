@@ -121,7 +121,7 @@ if(!empty($_POST)){
         </section>
         <div class="text-right hidden-xs">
             <input class="btn btn-success" type="submit" value="Enregistrer les modifications du client"><br /><br />
-            <a href="#"><button class="btn btn-warning">Ajouter un chantier</button></a>
+            <a href="?p=creation_chantier&id=<?= $id ?>"><button class="btn btn-warning">Ajouter un chantier</button></a>
         </div>
     </form>
 </div>
