@@ -1,6 +1,9 @@
                                                                 <!--PARTIE PHP  -->
 <?php
-
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 if (!empty($_POST))
 
 {
@@ -20,7 +23,6 @@ VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s")', $id_client, $titre, $date_d
 
     try 
     {
-        // echo $sql_creation_chantier;
         $bdd->query($sql_creation_chantier);
     
     }

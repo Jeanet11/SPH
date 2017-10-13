@@ -1,5 +1,8 @@
 <?php
-
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 if (!empty($_POST)){
     
     include('assets/templates/tryCatch.php');
