@@ -1,5 +1,5 @@
 <?php 
 $serveur = 'localhost';
-$utilisateur = 'root';
-$mdp = 'admin';
-$nomBdd = 'SPH';
+$utilisateur = 'id3244843_admin';
+$mdp = 'sphadmin';
+$nomBdd = 'id3244843_sph';

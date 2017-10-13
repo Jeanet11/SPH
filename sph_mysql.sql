@@ -1,9 +1,3 @@
-drop database if exists SPH;
-
-create database SPH; 
-
-use SPH; 
-
 create table uti_utilisateur(
 
 uti_oid int auto_increment primary key not null,
@@ -56,6 +50,6 @@ tra_oid int not null,
 uti_oid int not null, 
 constraint FOREIGN KEY(tra_oid) 
 references tra_travaux(tra_oid), 
-constraint FOREIGN KEY(cli_oid)
-references uti_utilisateur(cli_oid)
+constraint FOREIGN KEY(uti_oid)
+references uti_utilisateur(uti_oid)
 );

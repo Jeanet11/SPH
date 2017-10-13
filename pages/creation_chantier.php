@@ -15,7 +15,7 @@ include('assets/templates/tryCatch.php');
     $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
     $prix = htmlspecialchars($_POST['montant']);
 
-$sql_creation_chantier = sprintf('INSERT INTO SPH.tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
+$sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
 VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s")', $id_client, $titre, $date_debut, $date_rappel, $description, $mode_de_paiment, $prix);
 
     try 
