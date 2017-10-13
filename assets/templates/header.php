@@ -1,53 +1,51 @@
+<section class="container">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <!-- logo renvoyant vers la liste des chantiers -->
+    <ul class="col-lg-1  nav navbar-nav">
+            <li>  
+                <a class="navbar-brand" href="?p=liste_chantier">
+                    <img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
+                </a>
+            </li>
 
-<nav class="navbar navbar-default container">
-  <div class="">
+        
 
-  <button type="button" class="navbar-toggle navbar-toggle-left collapsed bouton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" data-label-expanded="Close" aria-expanded="false">
-    <span class="navbar-toggle-label">Menu</span>
-    <span class="sr-only">(toggle)</span>
+            <!-- bouton pour navbar responsive   -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+    </ul>
+    
+    <!-- contenu de la navbar -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+             <li class="hover"><a  href="?p=nouveau_client">Ajouter un client</a></li>
+             <li class="hover">
+                 <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
+                    <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                    <div class="visible-xs col-xs-8">
+                        <input type="text" class="form-control" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                    </div>
+                    <button type="submit" class="btn btn-success "><i class="glyphicon glyphicon-search"></i></button>
 
-    <span class="navbar-toggle-icon">
-      <span class="icon-bar ajouter">  </span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </span>
-  </button>
- <!--  logo dans un ul -->
-  	<ul class=" col-lg-1  nav navbar-nav">
-  		<li>  
-  			<a class="navbar-brand" href="?p=liste_clients">
-  				<img id="logo_navbar" alt="logo SPH" src="./assets/images/logo_sph.png">
-  			</a>
-  		</li>
-  	</ul>
+                </form
+            ></li>
+        </ul>
 
-
-	  <div class=" navbar-default">
-    <div class="">    
-   <!--  <div class="row collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-		<!-- logo cliquable -->
-		
-		<!-- redirection vers la page d'ajout d'un client -->
-  		<form method="GET" class="navbar-form navbar-left   hidden-xs col-lg-4">
-  			<a href="?p=nouveau_client"><button type="button" class="btn btn-success  ">Ajouter un client</button></a>
-  		</form>
-      </div>
-		<!-- redirection vers la page de déconnexion -->
-  		<form method="GET" class="navbar-form navbar-right hidden-xs  col-lg-3">
-  			<a href="?p=deconnexion"><button type="button" class="btn btn-success  ">Se déconnecter</button></a>
-  		</form>
-
-		<!-- moteur de recherche par nom -->
-      <form class="navbar-form navbar-right hidden-xs"  method="POST" action="?p=recherche_client">
-        <div class="form-group ">
-          <input type="text" class="form-control " placeholder="Rechercher un client par son nom" size="50" id="nom" name="nom"/>
-        </div>
-        <button type="submit" class="btn btn-success "><i class="glyphicon glyphicon-search"></i></button>
-      </form>
-	
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="hover"><a href="?p=deconnexion">Se déconnecter</a></li>
+        </ul>
+    </div>
+    <!-- fin du navbar-collapse -->
+   
 </nav>
+</section>
+
 
 
 
