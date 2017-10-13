@@ -14,5 +14,16 @@ a:hover{
     
 }
 #hoverL {
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #449D44;
+}
+
+.pagination{
+    padding: 10px;
+}
+.mayuri{
+    padding: 10px;
+    margin-right: 3px;
+    border:1px solid #449D44;
+    border-radius: 7px;
+    color: #449D44;
 }

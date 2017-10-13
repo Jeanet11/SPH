@@ -1,5 +1,8 @@
 <?php
-
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 $type = $_POST['type'];
 $id = $_POST['id'];
 $chemin = dirname(__DIR__)."/documents/".$id."/pdf/".$type.".pdf";

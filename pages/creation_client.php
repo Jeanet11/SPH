@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 // PARTIE PHP
 if (!empty($_POST)){
     //include de la page de connexion a la bdd ($bdd)
@@ -16,7 +20,7 @@ if (!empty($_POST)){
     $note = htmlspecialchars($_POST["note"]);
 
     //Création de la requete SQL pour ajouter le client
-    $sql_ajout_client = sprintf("INSERT INTO `SPH`.`cli_client` (`cli_nom`, `cli_prenom`, 
+    $sql_ajout_client = sprintf("INSERT INTO `cli_client` (`cli_nom`, `cli_prenom`, 
     `cli_email`, `cli_adresse`, `cli_cp`, `cli_ville`, `cli_tel`, `cli_commentaire`, 
     `cli_provenance`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
     $nom, $prenom, $email, $adresse, $cp, $ville, $tel, $note, $provenance);
@@ -58,7 +62,7 @@ if (!empty($_POST)){
             </div>
             <div class="form-group col-sm-4">
                 <label for="prenom">PRENOM :</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+                <input require type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
             </div>
             <div class="form-group col-sm-4">
             <label for="provenance">Provenance :</label>
@@ -77,11 +81,11 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="cp">CODE POSTAL :</label>
-                <input type="text" class="form-control" id="cp" name="cp" placeholder="Code Postal">
+                <input require type="text" class="form-control" id="cp" name="cp" placeholder="Code Postal">
             </div>
             <div class="form-group col-sm-4">
                 <label for="ville">VILLE :</label>
-                <input type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
+                <input require type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
             </div>
             <div class="col-sm-offset-1 col-sm-2">
                 <button type="submit" class="btn btn-success hidden-xs">Enregistrer le nouveau client</button>
@@ -94,7 +98,7 @@ if (!empty($_POST)){
             </div>
             <div class="form-group col-sm-4">
                 <label for="email">EMAIL :</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Adresse Email">
+                <input require type="email" class="form-control" id="email" name="email" placeholder="Adresse Email">
             </div>
         </section>
         <section class="row">
