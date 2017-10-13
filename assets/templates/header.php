@@ -8,8 +8,6 @@
                 </a>
             </li>
 
-        
-
             <!-- bouton pour navbar responsive   -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -26,15 +24,20 @@
         <ul class="nav navbar-nav">
              <li class="hover"><a  href="?p=nouveau_client">Ajouter un client</a></li>
              <li class="hover">
-                 <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
-                    <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
-                    <div class="visible-xs col-xs-8">
-                        <input type="text" class="form-control" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
-                    </div>
-                    <button type="submit" class="btn btn-success "><i class="glyphicon glyphicon-search"></i></button>
+    <!-- formulaire de recherche pour large device -->
+             <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
+                <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                <button type="submit" class="btn btn-success hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+             </form>
+    <!-- formulaire de recherche pour small device -->
+             <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
 
-                </form
-            ></li>
+                <div class="visible-xs col-xs-8">
+                    <input type="text" class="form-control" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                </div>
+                <button type="submit" class="btn btn-success visible-xs"><i class="glyphicon glyphicon-search"></i></button>
+             </form>
+            </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
