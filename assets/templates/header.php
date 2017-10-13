@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default container">
   <div class="">
 
-  <button type="button" class="navbar-toggle navbar-toggle-left collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" data-label-expanded="Close" aria-expanded="false">
+  <button type="button" class="navbar-toggle navbar-toggle-left collapsed bouton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" data-label-expanded="Close" aria-expanded="false">
     <span class="navbar-toggle-label">Menu</span>
     <span class="sr-only">(toggle)</span>
 
     <span class="navbar-toggle-icon">
-      <span class="icon-bar"></span>
+      <span class="icon-bar ajouter">  </span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </span>
