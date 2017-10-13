@@ -16,7 +16,7 @@ if (!empty($_POST)){
     $note = htmlspecialchars($_POST["note"]);
 
     //Création de la requete SQL pour ajouter le client
-    $sql_ajout_client = sprintf("INSERT INTO `SPH`.`cli_client` (`cli_nom`, `cli_prenom`, 
+    $sql_ajout_client = sprintf("INSERT INTO `cli_client` (`cli_nom`, `cli_prenom`, 
     `cli_email`, `cli_adresse`, `cli_cp`, `cli_ville`, `cli_tel`, `cli_commentaire`, 
     `cli_provenance`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
     $nom, $prenom, $email, $adresse, $cp, $ville, $tel, $note, $provenance);

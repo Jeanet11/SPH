@@ -8,6 +8,7 @@
 
     <link rel="icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/creation_chantier.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
 
@@ -39,10 +40,9 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-    <script type="text/javascript" src="././assets/js/recherche_client.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
-    <script src="assets/js/liste_chantier"></script>
+    <script src="assets/js/liste_chantier.js"></script>
 
 </body>
 </html>
