@@ -52,6 +52,13 @@ if($p === 'deconnexion'){
 }
 
 
+
+if($p === 'recherche_client') {
+	include('./pages/recherche_client.php');
+}
+
+
+
 $content = ob_get_clean();
 include('assets/templates/default.php');
 ?>

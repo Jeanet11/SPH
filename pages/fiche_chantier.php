@@ -57,7 +57,7 @@ if (file_exists($file)) {
 };
 //Gestion commentaire
 //affichage commentaire
-$sql_affiche_commentaire = sprintf("SELECT * FROM com_commentaire c INNER JOIN uti_utilisateur u ON u.uti_oid=c.uti_oid WHERE c.tra_oid = %d", $id_chantier );
+$sql_affiche_commentaire = sprintf("SELECT * FROM com_commentaire c INNER JOIN uti_utilisateur u ON u.uti_oid=c.uti_oid WHERE c.tra_oid = %d ORDER BY c.com_oid DESC", $id_chantier );
 try
 {
     $result_affiche_commentaire = $bdd->query($sql_affiche_commentaire)->fetchAll();
