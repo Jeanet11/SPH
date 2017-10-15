@@ -20,7 +20,7 @@ function upload($index, $destination, $maxsize=FALSE, $extensions=FALSE)
 }
 
 upload($num,$chemin, FALSE, array("jpg","JPG","jpeg","JPEG","png","PNG"));
-//header("location: ?p=galerie&id=".$id);
+header("location: ?p=galerie&id=".$id);
 
 
 ?>

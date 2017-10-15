@@ -32,7 +32,9 @@ function verif_repertoire($repertoire)
 };
 
 function upload_photo($id, $num){
-  echo '<section class="container"><form method="post" action="?p=up_photo" enctype="multipart/form-data">
+  echo '<section class="container">
+  <a class="btn btn-success" href="?p=fiche_chantier&id='.$id.'"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> CHANTIER</span></a>  
+  <form method="post" action="?p=up_photo" enctype="multipart/form-data">
   <ul class="list-inline">
   <input type="hidden" name="num" value="'.$num.'" />
   <input type="hidden" name="id" value="'.$id.'" />
@@ -51,6 +53,11 @@ if ($photo  == -1) {
 if ($photo  <= 0) {
   //si le répertoire existe mais il est vide
   upload_photo($id,($photo+1));
+?>
+<section class="container text-center">
+  <h1>Aucune photo n'est disponible pour ce chantier</h1>
+</section>
+<?php
 }elseif ($photo  >= 1) {
   //si il ya des fichiers
   upload_photo($id,($photo+1));
@@ -95,6 +102,7 @@ if ($photo  <= 0) {
       </a>
     </div>
   </div>
+  <!-- FIN CAROUSEL -->
   <!-- Miniatures -->
   <div class="row">
     <div class="col-xs-12 text-center">
@@ -111,7 +119,6 @@ if ($photo  <= 0) {
   <!-- <a class="thumbnail" href="#myCarousel" data-slide-to="0">
       <img src="./documents/3/photo/1.jpg" alt="...">
     </a> -->
-  ...
 </div>
 </section>
 <?php
