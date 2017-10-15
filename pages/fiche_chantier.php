@@ -84,8 +84,10 @@ if (!empty($_POST)){
     };
     header("Location: ?p=fiche_chantier&id=".$id_chantier);
 };
+//--------------------------------------HTML------------------------------------------
 ?>
 <div class="container">
+<a class="btn btn-success" href="?p=fiche_client&id=<?= $id_client ?>"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> CLIENT</span></a>
     <section class="col-sm-12 contour">
         <ul class="list-inline col-sm-12">
             <li class="list-group-item">Ref client : <?= $id_client ?></li>

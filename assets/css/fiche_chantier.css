@@ -1,6 +1,8 @@
-.contour {
-    /* border: solid 1px green; */
-    border-top: solid 1px green;
-    border-left: solid 1px green;
-    border-right: solid 1px green;
+@media (min-width: 768px) {
+    .contour {
+        /* border: solid 1px green; */
+        border-top: solid 1px green;
+        border-left: solid 1px green;
+        border-right: solid 1px green;
+    }
 }

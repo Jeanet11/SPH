@@ -75,6 +75,13 @@ if(!empty($_POST)){
 ?>
 <!-- HTML -->
 <div class="container">
+<section class="container">
+
+<form class=""  method="POST" action="?p=recherche_client">
+        <input type="text" class="hidden form-control" placeholder="Rechercher un client par son nom" size="50" id="nom" name="nom"/>
+    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Liste des clients</button>
+</form>
+
     <form action="" method="post">
         <section class="col-xs-12">
             <div class="row list-group-item ">
