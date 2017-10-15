@@ -123,9 +123,8 @@ if(!empty($_POST)){
             foreach ($result_info_chantier as $value) {
                 echo
                     '<a href="?p=fiche_chantier&id='.$value["tra_oid"].'"><ul class="list-inline">
-                        <li class="list-group-item col-xs-2">'.$value["tra_oid"].'</li>  
-                        <li class="list-group-item col-xs-6">'.$value["tra_titre"].'</li>  
-                        <li class="list-group-item col-xs-4">'.$value["date"].'</li>           
+                    <li class="list-group-item col-xs-4">'.$value["date"].'</li>           
+                        <li class="list-group-item col-xs-8">'.$value["tra_titre"].'</li>  
                     </ul></a>';
             }
             ?>
