@@ -68,7 +68,7 @@ function afficherBlocMois($mois, $annee, $table){
 
 $tableDebut = "
         <ul class='list-inline hidden-xs' id='columnTab'>
-            <li class='col-sm-2'>Date</li>
+            <li class='col-sm-2'>Début chantier</li>
             <li class='col-sm-2'>Nom</li>
             <li class='col-sm-2'>Prénom</li>
             <li class='col-sm-2'>Email</li>
