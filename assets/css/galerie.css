@@ -1,3 +1,7 @@
 .carousel .carousel-inner .item {
     max-height: 70vh;
-  }
+}
+.mini{
+    padding: 1vh;
+    max-height: 15vh;
+}

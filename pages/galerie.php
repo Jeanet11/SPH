@@ -57,7 +57,7 @@ if ($photo  <= 0) {
 ?>
 <section class="container">
   <div class="col-sm-offset-2 col-sm-8">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel"  data-interval="false">
       <!-- Indicateur du bas -->
       <ol class="carousel-indicators">
         <?php
@@ -87,14 +87,32 @@ if ($photo  <= 0) {
       <!-- Controle des fleches de gauche et droite -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Précédent</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Suivant</span>
       </a>
     </div>
   </div>
+  <!-- Miniatures -->
+  <div class="row">
+    <div class="col-xs-12 text-center">
+    <?php
+    //PHP créer les mignature en fonction du nombre de photos
+    for ($i=0; $i < $photo; $i++) { 
+      echo '
+        <a class="" href="#myCarousel" data-slide-to="'.$i.'">
+        <img class="mini" src="'.$dossier.'/'.($i+1).'.jpg" alt="Photo '.($i+1).'">        
+      </a>';
+      };
+    ?>
+    </div>
+  <!-- <a class="thumbnail" href="#myCarousel" data-slide-to="0">
+      <img src="./documents/3/photo/1.jpg" alt="...">
+    </a> -->
+  ...
+</div>
 </section>
 <?php
 }
