@@ -13,7 +13,7 @@ if (!empty($_POST))
     $id_client = htmlspecialchars($_GET['id']);
     $titre = htmlspecialchars($_POST['nom_du_chantier']);
     $date_debut = htmlspecialchars($_POST['date']);
-    $date_rappel = date('Y-m-d',strtotime('+12 month',strtotime($date_mtn)));
+    $date_rappel = date('Y-m-d',strtotime('+12 month',strtotime($date_debut)));
     $description = htmlspecialchars($_POST['notes']);
     $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
     $prix = str_replace(',', '.', htmlspecialchars($_POST['montant']));
