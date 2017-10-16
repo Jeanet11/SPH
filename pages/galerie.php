@@ -52,7 +52,7 @@ if ($photo  == -1) {
 };
 if ($photo  <= 0) {
   //si le répertoire existe mais il est vide
-  upload_photo($id,($photo+1));
+  upload_photo($id,(1));
 ?>
 <section class="container text-center">
   <h1>Aucune photo n'est disponible pour ce chantier</h1>
