@@ -9,7 +9,9 @@ $id_chantier = htmlspecialchars((int)$_GET["id"]);
 //include de la page de connexion a la bdd ($bdd)
 include('assets/templates/tryCatch.php');
 //requete sql pour récupéré les informations du chantier
-$sql_info_chantier = sprintf("SELECT *,DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE tra_oid = %d",$id_chantier);
+$sql_info_chantier = sprintf("SELECT *,DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date,
+DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date_devis
+FROM tra_travaux WHERE tra_oid = %d",$id_chantier);
 //execute la requete sql du chantier
 try
 {
@@ -91,26 +93,28 @@ if (!empty($_POST)){
     <section class="col-sm-12 contour">
         <ul class="list-inline col-sm-12">
             <li class="list-group-item">Ref client : <?= $id_client ?></li>
-            <li class="list-group-item"><?= $result_info_client["cli_nom"] ?></li>
-            <li class="list-group-item"><?= $result_info_client["cli_prenom"] ?></li>
+            <li class="list-group-item text-uppercase"><strong><?= $result_info_client["cli_nom"] ?></strong></li>
+            <li class="list-group-item"><strong><?= $result_info_client["cli_prenom"] ?></strong></li>
         </ul> 
         <ul class="list-group col-sm-2 hidden-xs">
-            <li class="list-group-item">Titre</li>
+            <li class="list-group-item"><strong>Nature des travaux</strong></li>
             <li class="list-group-item">Description</li>
             <li class="list-group-item">Prix</li>
-            <li class="list-group-item">Date</li>
+            <li class="list-group-item">Date Devis</li>
+            <li class="list-group-item">Date Travaux</li>            
             <li class="list-group-item">Moyen de paiement</li>
         </ul>
         <ul class="list-group col-sm-4 col-xs-12">
-            <li class="list-group-item" id="titre"><?= $result_info_chantier["tra_titre"] ?></li>
+            <li class="list-group-item text-uppercase" id="titre"><strong><?= $result_info_chantier["tra_titre"] ?></strong></li>
             <li class="list-group-item" id="description"><?= $result_info_chantier["tra_description"] ?></li>
             <li class="list-group-item" id="prix"><?= $result_info_chantier["tra_prix"] ?>€</li>
-            <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>
+            <li class="list-group-item" id="date"><?= $result_info_chantier["date_devis"] ?></li>
+            <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>            
             <li class="list-group-item" id="paiement"><?= $result_info_chantier["tra_mode_paiment"] ?></li>
         </ul> 
         <ul class="list-group list-unstyled col-sm-6 col-xs-12">
-            <li><label for="commentaire">Note</label></li>        
-            <li><textarea disabled class="list-group-item col-xs-12" rows="8"><?= $result_info_chantier["tra_description"] ?></textarea></li>
+            <li><label for="note">Note</label></li>        
+            <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8"><?= $result_info_chantier["tra_description"] ?></textarea></li>
         </ul> 
     </section>
     <section class="col-sm-12 contour">
