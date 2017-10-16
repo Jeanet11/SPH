@@ -21,7 +21,7 @@ cli_ville varchar(60),
 cli_tel char(10),
 cli_commentaire text, 
 cli_provenance varchar(50)
- );
+);
 
 create table tra_travaux(
 
