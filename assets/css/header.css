@@ -2,9 +2,12 @@
 	width: auto;
 	height: 45px;
 	position: absolute;
-    left: 0;
+    /* left: 0;*/
     top: 0;
     text-align: center;
     margin: auto;
 }
 
+.hover:hover {
+    background-color: rgb(220, 236, 217);
+}
