@@ -1,9 +1,3 @@
-drop database if exists SPH;
-
-create database SPH; 
-
-use SPH; 
-
 create table uti_utilisateur(
 
 uti_oid int auto_increment primary key not null,
@@ -41,11 +35,7 @@ tra_mode_paiment varchar(50),
 cli_oid int not null ,
 constraint FOREIGN KEY(cli_oid)
 references cli_client(cli_oid),
-tra_devis text, 
-tra_facture text, 
-tra_pv text, 
-tra_photos text, 
-tra_garantie text 	
+tra_photos text	
 );
 
 create table com_commentaire(

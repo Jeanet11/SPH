@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+    .contour { 
+        border-top: solid 1px green;
+        border-left: solid 1px green;
+        border-right: solid 1px green;
+    }
+}

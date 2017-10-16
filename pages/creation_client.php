@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])){
+    header("Location: ?p=connexion");
+};
 // PARTIE PHP
 if (!empty($_POST)){
     //include de la page de connexion a la bdd ($bdd)
@@ -16,7 +20,7 @@ if (!empty($_POST)){
     $note = htmlspecialchars($_POST["note"]);
 
     //Création de la requete SQL pour ajouter le client
-    $sql_ajout_client = sprintf("INSERT INTO `SPH`.`cli_client` (`cli_nom`, `cli_prenom`, 
+    $sql_ajout_client = sprintf("INSERT INTO `cli_client` (`cli_nom`, `cli_prenom`, 
     `cli_email`, `cli_adresse`, `cli_cp`, `cli_ville`, `cli_tel`, `cli_commentaire`, 
     `cli_provenance`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
     $nom, $prenom, $email, $adresse, $cp, $ville, $tel, $note, $provenance);
@@ -35,7 +39,14 @@ if (!empty($_POST)){
     //Création de la requete
     $sql_dernier_client = "SELECT cli_oid FROM cli_client ORDER BY cli_oid DESC LIMIT 1";
     //Exécution de la requete
-    $result_dernier_client = $bdd->query($sql_dernier_client)->fetch();
+    try
+    {
+        $result_dernier_client = $bdd->query($sql_dernier_client)->fetch();
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    };
     //Redirection de la page
     header("Location: ?p=fiche_client&id=".$result_dernier_client['cli_oid']);
 };
@@ -47,11 +58,11 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="nom">NOM :</label>
-                <input require type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+                <input required type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
             </div>
             <div class="form-group col-sm-4">
                 <label for="prenom">PRENOM :</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+                <input required type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
             </div>
             <div class="form-group col-sm-4">
             <label for="provenance">Provenance :</label>
@@ -70,14 +81,14 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="cp">CODE POSTAL :</label>
-                <input type="text" class="form-control" id="cp" name="cp" placeholder="Code Postal">
+                <input required type="text" class="form-control" id="cp" name="cp" placeholder="Code Postal">
             </div>
             <div class="form-group col-sm-4">
                 <label for="ville">VILLE :</label>
-                <input type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
+                <input required type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
             </div>
             <div class="col-sm-offset-1 col-sm-2">
-                <button type="submit" class="btn btn-success">Enregistrer le nouveau client</button>
+                <button type="submit" class="btn btn-success hidden-xs">Enregistrer le nouveau client</button>
             </div>
         </section>
         <section class="row">
@@ -87,7 +98,7 @@ if (!empty($_POST)){
             </div>
             <div class="form-group col-sm-4">
                 <label for="email">EMAIL :</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Adresse Email">
+                <input required type="email" class="form-control" id="email" name="email" placeholder="Adresse Email">
             </div>
         </section>
         <section class="row">
@@ -96,5 +107,8 @@ if (!empty($_POST)){
                 <textarea name="note" id="note" class="form-control"  rows="10"></textarea>
             </div>
         </section>
+        <div class="col-sm-offset-1 col-sm-2">
+            <button type="submit" class="btn btn-success visible-xs">Enregistrer le nouveau client</button>
+        </div>
     </form> 
 </div>
