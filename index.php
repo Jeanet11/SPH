@@ -31,6 +31,9 @@ if($p === 'fiche_client'){
     include('./pages/fiche_client.php');
 }
 
+if($p === 'galerie'){
+    include('./pages/galerie.php');
+}
 
 if($p === 'fiche_chantier'){
     include('./pages/fiche_chantier.php');
@@ -46,6 +49,10 @@ if($p === 'fichier'){
     die;
 }
 
+if($p === 'up_photo'){
+    include('./pages/upload_photo.php');
+    die;
+}
 
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');

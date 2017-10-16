@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="assets/css/creation_chantier.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
-
     <link rel="stylesheet" href="assets/css/liste_chantier.css">
-
+    
     <link rel="stylesheet" href="assets/css/fiche_client.css">
-
+    
     <link rel="stylesheet" type="text/css" href="assets/css/recherche_client.css">
-
-
+    
+    
     <link rel="stylesheet" href="assets/css/fiche_chantier.css">
+    <link rel="stylesheet" href="assets/css/galerie.css">
 
 
     <title>SPH</title>
@@ -34,9 +34,7 @@
     } else { 
         echo $content;
     }
-
     ?>
-    
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 

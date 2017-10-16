@@ -1,13 +1,7 @@
-@media(max-width:767px){}
-@media(min-width:768px){}
-@media(min-width:992px){
+@media (min-width: 768px) {
     .contour { 
-        /* border: solid 1px green;  */
         border-top: solid 1px green;
         border-left: solid 1px green;
         border-right: solid 1px green;
     }
-
 }
-@media(min-width:1200px){}
-
