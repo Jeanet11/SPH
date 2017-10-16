@@ -12,13 +12,13 @@ uti_autorisation int not null
 create table cli_client(
 
 cli_oid int auto_increment primary key not null, 
-cli_nom varchar(50),
-cli_prenom varchar(50), 
-cli_email varchar(50), 
-cli_adresse varchar(50),
+cli_nom varchar(250),
+cli_prenom varchar(250), 
+cli_email varchar(250), 
+cli_adresse varchar(500),
 cli_cp char(5),
-cli_ville varchar(60),
-cli_tel char(10),
+cli_ville varchar(100),
+cli_tel char(12),
 cli_commentaire text, 
 cli_provenance varchar(50)
 );
@@ -29,13 +29,13 @@ tra_oid int auto_increment primary key not null,
 tra_titre varchar(50),
 tra_description varchar(255),
 tra_prix float, 
-tra_date_debut date, 
+tra_date_debut date,
+tra_date_devis date, 
 tra_date_rappel date, 
 tra_mode_paiment varchar(50), 
 cli_oid int not null ,
 constraint FOREIGN KEY(cli_oid)
-references cli_client(cli_oid),
-tra_photos text	
+references cli_client(cli_oid)
 );
 
 create table com_commentaire(
