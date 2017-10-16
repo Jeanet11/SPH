@@ -43,6 +43,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
     <script src="assets/js/fiche_client.js"></script>
     <script src="assets/js/creation_client.js"></script>
-    
+    <script src="assets/js/creation_chantier.js"></script>
+
 </body>
 </html>
