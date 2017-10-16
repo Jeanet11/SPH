@@ -23,7 +23,10 @@ catch (Exception $e)
 };
 
 //requete sql pour récupéré les infos chantier
-$sql_info_chantier = sprintf("SELECT tra_prix, tra_oid, tra_titre, DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
+$sql_info_chantier = sprintf("SELECT tra_prix, tra_oid, tra_titre, 
+DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date,
+DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date_travaux
+FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
 //execute la requete sql du chantier
 try
 {
@@ -121,16 +124,18 @@ if(!empty($_POST)){
         <section class="col-sm-offset-2 col-sm-6 col-xs-12">
             <br />
             <ul class="list-inline">
-                <li class="list-group-item col-xs-2">Date Devis</li>           
-                <li class="list-group-item col-xs-8">Nature des travaux</li>
+                <li class="list-group-item col-xs-2">D. Devis</li>
+                <li class="list-group-item col-xs-2">D. Travaux</li>                                   
+                <li class="list-group-item col-xs-6">Nature des travaux</li>
                 <li class="list-group-item col-xs-2 text-right">Prix</li>
             </ul>
             <?php
             foreach ($result_info_chantier as $value) {
                 echo
                     '<a href="?p=fiche_chantier&id='.$value["tra_oid"].'"><ul class="list-inline">
-                        <li class="list-group-item col-xs-2">'.$value["date"].'</li>           
-                        <li class="list-group-item col-xs-8">'.$value["tra_titre"].'</li>
+                        <li class="list-group-item col-xs-2">'.$value["date"].'</li>
+                        <li class="list-group-item col-xs-2">'.$value["date_travaux"].'</li>                                   
+                        <li class="list-group-item col-xs-6">'.$value["tra_titre"].'</li>
                         <li class="list-group-item col-xs-2 text-right">'.$value["tra_prix"].' €</li>
                     </ul></a>';
             }
