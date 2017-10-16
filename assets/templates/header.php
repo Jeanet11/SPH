@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
              <li class="hover"><a  href="?p=nouveau_client">Ajouter un client</a></li>
-             <li class="hover">
+             <li>
     <!-- formulaire de recherche pour large device -->
              <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
                 <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
@@ -40,8 +40,8 @@
             </li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="hover"><a href="?p=deconnexion">Se déconnecter</a></li>
+        <ul class="nav navbar-nav">
+            <li><a id="hoverDeco" href="?p=deconnexion">Se déconnecter</a></li>
         </ul>
     </div>
     <!-- fin du navbar-collapse -->

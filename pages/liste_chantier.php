@@ -20,7 +20,7 @@ $nbArt = (INT)$data['nbArt'];
 // echo $nbArt;
 // print_r($nbArt);
 
-$perPage = 4;
+$perPage = 20;
 $nbPage = ceil($nbArt/$perPage);
 // echo $nbPage;
 
