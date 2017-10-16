@@ -23,7 +23,7 @@ catch (Exception $e)
 };
 
 //requete sql pour récupéré les infos chantier
-$sql_info_chantier = sprintf("SELECT tra_oid, tra_titre, DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
+$sql_info_chantier = sprintf("SELECT tra_prix, tra_oid, tra_titre, DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
 //execute la requete sql du chantier
 try
 {
@@ -57,7 +57,7 @@ if(!empty($_POST)){
     $email_update = htmlspecialchars($_POST["email"]);
     $note_update = htmlspecialchars($_POST["note"]);
     //requete sql pour mettre à jour les infos client
-    $sql_update_client = sprintf('UPDATE SPH.cli_client SET cli_nom="%s", cli_prenom="%s", 
+    $sql_update_client = sprintf('UPDATE cli_client SET cli_nom="%s", cli_prenom="%s", 
     cli_email="%s", cli_adresse="%s", cli_cp="%s", cli_ville="%s", cli_tel="%s", 
     cli_commentaire="%s" WHERE cli_oid= %d',
     $nom_update, $prenom_update, $email_update, $adresse_update, $cp_update, $ville_update, $tel_update, $note_update, $id );
@@ -119,12 +119,19 @@ if(!empty($_POST)){
             <a class="btn btn-warning" href="?p=creation_chantier&id=<?= $id ?>">Ajouter un chantier</a>    
         </div>
         <section class="col-sm-offset-2 col-sm-6 col-xs-12">
+            <br />
+            <ul class="list-inline">
+                <li class="list-group-item col-xs-2">Date Devis</li>           
+                <li class="list-group-item col-xs-8">Nature des travaux</li>
+                <li class="list-group-item col-xs-2 text-right">Prix</li>
+            </ul>
             <?php
             foreach ($result_info_chantier as $value) {
                 echo
                     '<a href="?p=fiche_chantier&id='.$value["tra_oid"].'"><ul class="list-inline">
-                    <li class="list-group-item col-xs-4">'.$value["date"].'</li>           
-                        <li class="list-group-item col-xs-8">'.$value["tra_titre"].'</li>  
+                        <li class="list-group-item col-xs-2">'.$value["date"].'</li>           
+                        <li class="list-group-item col-xs-8">'.$value["tra_titre"].'</li>
+                        <li class="list-group-item col-xs-2 text-right">'.$value["tra_prix"].' €</li>
                     </ul></a>';
             }
             ?>
