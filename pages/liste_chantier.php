@@ -34,10 +34,11 @@ if(isset($_GET['d']) && $_GET['d']>0 && $_GET['d']<=$nbPage){
 
 //requete pour l'affichage liste chantier
 $reponse = $bdd->query('SELECT *,day(tra_date_debut) as jour, month(tra_date_debut) 
-as mois, year(tra_date_debut) as annee
+as mois, year(tra_date_debut) as annee, day(tra_date_devis) as jourD, month(tra_date_devis) as moisD,
+year(tra_date_devis) as anneeD
 FROM tra_travaux  INNER JOIN cli_client 
 ON tra_travaux.cli_oid = cli_client.cli_oid 
-ORDER BY tra_date_debut desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
+ORDER BY tra_date_devis desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
 ?>
 
 
@@ -72,11 +73,11 @@ function afficherBlocMois($mois, $annee, $table){
 
 $tableDebut = "
         <ul class='list-inline hidden-xs' id='columnTab'>
+            <li class='col-sm-2'>Devis du</li>
             <li class='col-sm-2'>Début chantier</li>
             <li class='col-sm-2'>Nom</li>
             <li class='col-sm-2'>Prénom</li>
             <li class='col-sm-2'>Email</li>
-            <li class='col-sm-2'>Cp</li>
             <li class='col-sm-2'>Ville</li>
         </ul>
 ";
@@ -98,12 +99,12 @@ while  ($donnees = $reponse->fetch()){
     $table .= "
     <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
+        <li class='col-sm-2 col-xs-3''>" . $donnees['jourD'] ."/".$donnees['moisD']."/". $donnees['anneeD']. "</li>
         <li class='col-sm-2 col-xs-12'>" . $donnees['jour'] ."/" . $donnees['mois'] . "/" . $donnees['annee'] . "</li>
         <li class='col-sm-2 hidden-xs text-uppercase'>" . $donnees['cli_nom'] . "</li>
         <li class='col-sm-2 hidden-xs'>" . $donnees['cli_prenom'] . "</li>
         <li class='col-xs-12 visible-xs'><span class='text-uppercase'><strong>" . $donnees['cli_nom']. "</strong></span> ". $donnees['cli_prenom'] . "</li>        
         <li class='col-sm-2 col-xs-12'>" . $donnees['cli_email'] . "</li>
-        <li class='col-sm-2 col-xs-3''>" . $donnees['cli_cp'] . "</li>
         <li class='col-sm-2 col-xs-8''>" . $donnees['cli_ville'] . "</li>
     </ul>
     <div class='col-xs-12 visible-xs' id='hoverL'></div>
