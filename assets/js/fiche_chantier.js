@@ -8,7 +8,10 @@ function verif_vide(aVerif){
     if (aVerif.text() == ""){
         return aVerif.html("<em>Aucune donnée saisie<em>");
     };
+
 };
+
+
 verif_vide(titre);
 verif_vide(description);
 verif_vide(prix);

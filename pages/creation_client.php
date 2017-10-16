@@ -90,6 +90,11 @@ if (!empty($_POST)){
             <div class="col-sm-offset-1 col-sm-2">
                 <button type="submit" class="btn btn-success hidden-xs">Enregistrer le nouveau client</button>
             </div>
+            
+
+
+        
+        
         </section>
         <section class="row">
             <div class="form-group col-sm-4">
@@ -112,3 +117,4 @@ if (!empty($_POST)){
         </div>
     </form> 
 </div>
+
