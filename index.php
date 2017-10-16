@@ -57,13 +57,16 @@ if($p === 'up_photo'){
 if($p === 'deconnexion'){
 	include('./pages/deconnexion.php');
 }
-
-
+if($p === 'administration') {
+	include('./pages/gestion.php');
+}
 
 if($p === 'recherche_client') {
 	include('./pages/recherche_client.php');
 }
-
+if($p === 'suppression') {
+	include('./pages/suppression.php');
+}
 
 
 $content = ob_get_clean();

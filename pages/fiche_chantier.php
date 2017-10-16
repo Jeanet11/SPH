@@ -42,10 +42,37 @@ $file = dirname(__DIR__)."/documents/".$id."/pdf/".$type.".pdf";
 if (file_exists($file)) {
     return '<li">
     <ul class="list-inline">
-    <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
-    <li class="list-group-item btn btn-success">
-    <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
-    </li>
+        <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
+        <li class="list-group-item btn btn-success">
+            <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
+        </li>
+        <li class="list-group-item">
+            <form method="post" action="?p=suppression">
+                <input type="hidden" name="type" value="'.$type.'" />
+                <input type="hidden" name="id" value="'.$id.'" />
+                <!-- MODAL POUR LA SUPRRESSION -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                    Supprimer
+                </button>
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">SUPPRESSION</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Etes-vous sûre de vouloir supprimer le fichier suivant : '.$type.'.pdf ?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </form>
+        </li>
     </ul>
     </li>';
 } else {
@@ -153,4 +180,3 @@ if (!empty($_POST)){
 </div>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="assets/js/fiche_chantier.js"></script>
-
