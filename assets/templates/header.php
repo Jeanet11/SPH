@@ -26,14 +26,14 @@
              <li class="hover">
     <!-- formulaire de recherche pour large device -->
              <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
-                <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="recherche" name="recherche"/>
                 <button type="submit" class="btn btn-success hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
              </form>
     <!-- formulaire de recherche pour small device -->
              <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
 
                 <div class="visible-xs col-xs-8">
-                    <input type="text" class="form-control" placeholder="Rechercher un client par son nom"  id="nom" name="nom"/>
+                    <input type="text" class="form-control" placeholder="Rechercher un client par son nom"  id="recherche" name="recherche"/>
                 </div>
                 <button type="submit" class="btn btn-success visible-xs"><i class="glyphicon glyphicon-search"></i></button>
              </form>
