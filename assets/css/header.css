@@ -11,3 +11,11 @@
 .hover:hover {
     background-color: rgb(220, 236, 217);
 }
+
+#hoverDeco{
+    margin-left: 261px; 
+}
+
+#hoverDeco:hover{
+    background-color: rgb(220, 236, 217);
+}
