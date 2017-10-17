@@ -14,6 +14,6 @@ function verif_vide(aVerif){
 
 verif_vide(adresse);
 verif_vide(code_postal);
-verif_vide(ville); 
+verif_vide(ville);  
 verif_vide(telephone); 
 verif_vide(email); 
