@@ -65,7 +65,7 @@ if (file_exists($file)) {
                       <p>Etes-vous sûre de vouloir supprimer le fichier suivant : '.$type.'.pdf ?</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                       <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
                     </div>
                   </div><!-- /.modal-content -->
