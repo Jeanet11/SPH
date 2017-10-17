@@ -9,7 +9,9 @@ $id_chantier = htmlspecialchars((int)$_GET["id"]);
 //include de la page de connexion a la bdd ($bdd)
 include('assets/templates/tryCatch.php');
 //requete sql pour récupéré les informations du chantier
-$sql_info_chantier = sprintf("SELECT *,DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date  FROM tra_travaux WHERE tra_oid = %d",$id_chantier);
+$sql_info_chantier = sprintf("SELECT *,DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date,
+DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date_devis
+FROM tra_travaux WHERE tra_oid = %d",$id_chantier);
 //execute la requete sql du chantier
 try
 {
@@ -40,10 +42,37 @@ $file = dirname(__DIR__)."/documents/".$id."/pdf/".$type.".pdf";
 if (file_exists($file)) {
     return '<li">
     <ul class="list-inline">
-    <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
-    <li class="list-group-item btn btn-success">
-    <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
-    </li>
+        <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
+        <li class="list-group-item btn btn-success">
+            <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
+        </li>
+        <li class="list-group-item">
+            <form method="post" action="?p=suppression">
+                <input type="hidden" name="type" value="'.$type.'" />
+                <input type="hidden" name="id" value="'.$id.'" />
+                <!-- MODAL POUR LA SUPRRESSION -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                    Supprimer
+                </button>
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">SUPPRESSION</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Etes-vous sûre de vouloir supprimer le fichier suivant : '.$type.'.pdf ?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </form>
+        </li>
     </ul>
     </li>';
 } else {
@@ -91,26 +120,28 @@ if (!empty($_POST)){
     <section class="col-sm-12 contour">
         <ul class="list-inline col-sm-12">
             <li class="list-group-item">Ref client : <?= $id_client ?></li>
-            <li class="list-group-item"><?= $result_info_client["cli_nom"] ?></li>
-            <li class="list-group-item"><?= $result_info_client["cli_prenom"] ?></li>
+            <li class="list-group-item text-uppercase"><strong><?= $result_info_client["cli_nom"] ?></strong></li>
+            <li class="list-group-item"><strong><?= $result_info_client["cli_prenom"] ?></strong></li>
         </ul> 
         <ul class="list-group col-sm-2 hidden-xs">
-            <li class="list-group-item">Titre</li>
+            <li class="list-group-item"><strong>Nature des travaux</strong></li>
             <li class="list-group-item">Description</li>
             <li class="list-group-item">Prix</li>
-            <li class="list-group-item">Date</li>
+            <li class="list-group-item">Date Devis</li>
+            <li class="list-group-item">Date Travaux</li>            
             <li class="list-group-item">Moyen de paiement</li>
         </ul>
         <ul class="list-group col-sm-4 col-xs-12">
-            <li class="list-group-item" id="titre"><?= $result_info_chantier["tra_titre"] ?></li>
+            <li class="list-group-item text-uppercase" id="titre"><strong><?= $result_info_chantier["tra_titre"] ?></strong></li>
             <li class="list-group-item" id="description"><?= $result_info_chantier["tra_description"] ?></li>
             <li class="list-group-item" id="prix"><?= $result_info_chantier["tra_prix"] ?>€</li>
-            <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>
+            <li class="list-group-item" id="date"><?= $result_info_chantier["date_devis"] ?></li>
+            <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>            
             <li class="list-group-item" id="paiement"><?= $result_info_chantier["tra_mode_paiment"] ?></li>
         </ul> 
         <ul class="list-group list-unstyled col-sm-6 col-xs-12">
-            <li><label for="commentaire">Note</label></li>        
-            <li><textarea disabled class="list-group-item col-xs-12" rows="8"><?= $result_info_chantier["tra_description"] ?></textarea></li>
+            <li><label for="note">Note</label></li>        
+            <li><textarea disabled id="note" class="list-group-item col-xs-12" rows="8"><?= $result_info_chantier["tra_description"] ?></textarea></li>
         </ul> 
     </section>
     <section class="col-sm-12 contour">
@@ -149,4 +180,3 @@ if (!empty($_POST)){
 </div>
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="assets/js/fiche_chantier.js"></script>
-
