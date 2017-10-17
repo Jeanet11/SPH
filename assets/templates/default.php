@@ -44,6 +44,8 @@
     <script src="assets/js/fiche_client.js"></script>
     <script src="assets/js/creation_client.js"></script>
     <script src="assets/js/creation_chantier.js"></script>
+    <script src="assets/js/fiche_chantier.js"></script>
+    <script src="assets/js/gestion.js"></script>
 
 </body>
 </html>

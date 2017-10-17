@@ -7,7 +7,7 @@ if (!empty($_POST)){
     
     include('assets/templates/tryCatch.php');
 
-    $nom = htmlspecialchars($_POST["nom"]);
+    $nom = htmlspecialchars($_POST["recherche"]);
 }
 
     $reponse=$bdd->query(sprintf("SELECT * FROM cli_client  WHERE cli_nom LIKE '%%%s%%' ", $nom));

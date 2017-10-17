@@ -13,13 +13,14 @@ if (!empty($_POST))
     $id_client = htmlspecialchars($_GET['id']);
     $titre = htmlspecialchars($_POST['nom_du_chantier']);
     $date_debut = htmlspecialchars($_POST['date']);
+    $date_devis = htmlspecialchars($_POST['date_devis']);    
     $date_rappel = date('Y-m-d',strtotime('+12 month',strtotime($date_debut)));
     $description = htmlspecialchars($_POST['notes']);
     $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
     $prix = str_replace(',', '.', htmlspecialchars($_POST['montant']));
 
-    $sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
-VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s")', $id_client, $titre, $date_debut, $date_rappel, $description, $mode_de_paiment, $prix);
+    $sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_devis, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
+VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s", "%s")', $id_client, $titre, $date_debut, $date_devis, $date_rappel, $description, $mode_de_paiment, $prix);
     try
         {
         $bdd->query($sql_creation_chantier);
@@ -40,7 +41,11 @@ $date_mtn = date('Y-m-d');
             <input required type="text" class="form-control" id="nom_du_chantier"  name="nom_du_chantier">
         </div>
         <div class="col-sm-2 col-xs-12 text-center">
-            <label for="date">Date :</label>
+            <label for="date_devis">Date Devis :</label>
+            <input type="date" class="form-control text-right" id="date_devis"  name="date_devis" value="<?= $date_mtn ?>">
+        </div>
+        <div class="col-sm-2 col-xs-12 text-center">
+            <label for="date">Date Travaux:</label>
             <input type="date" class="form-control text-right" id="date"  name="date" value="<?= $date_mtn ?>">
         </div>
         <div class="col-sm-2 col-xs-6 text-center">
@@ -52,7 +57,7 @@ $date_mtn = date('Y-m-d');
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-xs-12 text-center">
+        <div class="col-sm-2 col-xs-12 text-center">
             <label for="mode_de_paiment">Moyen de paiment :</label>
             <input type="text" class="form-control" id="mode_de_paiment"  name="mode_de_paiment"></div>
         </div>
