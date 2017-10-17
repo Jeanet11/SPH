@@ -64,7 +64,7 @@ if(empty($result_info_chantier)){
                     </div>
                     <div class="modal-footer">
                         <input type="text" class="hidden" id="id_suppression" name="id_suppression" value="'.$id.'"/>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                         <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
                     </div>
                 </div><!-- /.modal-content -->
