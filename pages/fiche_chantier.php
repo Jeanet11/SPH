@@ -51,10 +51,10 @@ if (file_exists($file)) {
                 <input type="hidden" name="type" value="'.$type.'" />
                 <input type="hidden" name="id" value="'.$id.'" />
                 <!-- MODAL POUR LA SUPRRESSION -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$type.'">
                     Supprimer
                 </button>
-                <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div id="myModal'.$type.'" class="modal fade" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -117,6 +117,8 @@ if (!empty($_POST)){
 ?>
 <div class="container">
 <a class="btn btn-success" href="?p=fiche_client&id=<?= $id_client ?>"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> CLIENT</span></a>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#suppression_chantier">Supprimer</button>
+
     <section class="col-sm-12 contour">
         <ul class="list-inline col-sm-12">
             <li class="list-group-item">Ref client : <?= $id_client ?></li>
@@ -178,5 +180,27 @@ if (!empty($_POST)){
         </ul>
     </section>
 </div>
+<!-- MODAL POUR LA SUPRRESSION -->
+<form method="POST" action="?p=suppression_chantier">
+        <div id="suppression_chantier" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">CONFIRMER LA SUPPRESSION</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Etes-vous sûre de vouloir supprimer ce chantier ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="text" class="hidden" id="id_suppression_chantier" name="id_suppression_chantier" value="<?= $id_chantier ?>"/>
+                        <input type="text" class="hidden" id="id_suppression_client" name="id_suppression_client" value="<?= $id_client ?>"/>                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </form>';
 <script src="node_modules/jquery/dist/jquery.js"></script>
 <script src="assets/js/fiche_chantier.js"></script>
