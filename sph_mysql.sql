@@ -32,7 +32,8 @@ tra_prix float,
 tra_date_debut date,
 tra_date_devis date, 
 tra_date_rappel date, 
-tra_mode_paiment varchar(100), 
+tra_mode_paiment varchar(100),
+
 cli_oid int not null ,
 constraint FOREIGN KEY(cli_oid)
 references cli_client(cli_oid)
