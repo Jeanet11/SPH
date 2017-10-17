@@ -126,10 +126,10 @@ catch (Exception $e)
             unset($uti_ajouter);
     ?>> 
         <ul class="list-inline">
-            <li class="list-group-item col-xs-3"><strong>Pseudo</strong></strong></li>
-            <li class="list-group-item col-xs-3"><strong>Nom</strong></li>                                   
-            <li class="list-group-item col-xs-3"><strong>Prénom</strong></li>
-            <li class="list-group-item col-xs-3"><strong>Type de compte</strong></li>
+            <li class="list-group-item col-sm-3 col-xs-6"><strong>Nom</strong></li>                                   
+            <li class="list-group-item col-sm-3 col-xs-6"><strong>Prénom</strong></li>
+            <li class="list-group-item col-sm-3 col-xs-6"><strong>Pseudo</strong></strong></li>
+            <li class="list-group-item col-sm-3 col-xs-6"><strong>Type de compte</strong></li>
         </ul>
     <?php
         foreach ($result_liste_utilisateurs as $value) {
@@ -140,10 +140,10 @@ catch (Exception $e)
             }
             echo
                 '<ul class="list-inline">
-                    <li class="list-group-item col-xs-3">'.$value["uti_pseudo"].'</li>
-                    <li class="list-group-item col-xs-3">'.$value["uti_nom"].'</li>                                   
-                    <li class="list-group-item col-xs-3">'.$value["uti_prenom"].'</li>
-                    <li class="list-group-item col-xs-3">'.$aut.'</li>
+                    <li class="list-group-item col-sm-3 col-xs-6"><strong>'.$value["uti_nom"].'</strong></li>                                   
+                    <li class="list-group-item col-sm-3 col-xs-6"><strong>'.$value["uti_prenom"].'</strong></li>
+                    <li class="list-group-item col-sm-3 col-xs-6">'.$value["uti_pseudo"].'</li>
+                    <li class="list-group-item col-sm-3 col-xs-6">'.$aut.'</li>
                 </ul>';
         }
         ?>
