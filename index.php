@@ -67,7 +67,9 @@ if($p === 'recherche_client') {
 if($p === 'suppression') {
 	include('./pages/suppression.php');
 }
-
+if($p === 'suppression_chantier') {
+	include('./pages/suppression_chantier.php');
+}
 
 $content = ob_get_clean();
 include('assets/templates/default.php');
