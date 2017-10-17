@@ -48,6 +48,49 @@ $tel = $result_info_client["cli_tel"];
 $email = $result_info_client["cli_email"];
 $note = $result_info_client["cli_commentaire"];
 //-------------------FIN AFFICHAGE-------------------
+//-------------------SUPPRESSION CLIENT ----------------------------------------
+if(empty($result_info_chantier)){
+    $suppression = '                <!-- MODAL POUR LA SUPRRESSION -->
+    <form method="POST" action="?p=suppression_client">
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">CONFIRMER LA SUPPRESSION</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Etes-vous sûre de vouloir supprimer le client suivant : '.$nom.' '.$prenom.' ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="text" class="hidden" id="id_suppression" name="id_suppression" value="'.$id.'"/>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </form>';
+}else {
+    $suppression = '                <!-- MODAL POUR LA NON-SUPRRESSION -->
+        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">SUPPRESSION IMPOSSIBLE</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Impossible de supprimer un client qui possède des chantiers.</p>
+                        <p>Veuillez supprimer les chantier de '.$nom.' '.$prenom.' avant de poursuivre.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->';
+};
 //-------------------DEBUT TRAITEMENT FORM POUR UPDATE CLIENT-------------------
 if(!empty($_POST)){
     //définition des varialble récupéré via POST
@@ -79,12 +122,14 @@ if(!empty($_POST)){
 <!-- HTML -->
 <div class="container">
 <section class="container">
-
+<!-- RETOUR LISTE CLIENT -->
 <form class=""  method="POST" action="?p=recherche_client">
-        <input type="text" class="hidden form-control" placeholder="Rechercher un client par son nom" size="50" id="nom" name="nom"/>
+        <input type="text" class="hidden" id="recherche" name="recherche"/>
     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Liste des clients</button>
 </form>
-
+<!-- BOUTON SUPPRESION -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Supprimer</button>
+<?= $suppression ?>
     <form action="" method="post">
         <section class="col-xs-12">
             <div class="row list-group-item ">
