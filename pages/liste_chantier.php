@@ -33,9 +33,13 @@ if(isset($_GET['d']) && $_GET['d']>0 && $_GET['d']<=$nbPage){
 
 
 //requete pour l'affichage liste chantier
-$reponse = $bdd->query('SELECT *,day(tra_date_debut) as jour, month(tra_date_debut) 
-as mois, year(tra_date_debut) as annee, day(tra_date_devis) as jourD, month(tra_date_devis) as moisD,
-year(tra_date_devis) as anneeD
+$reponse = $bdd->query('SELECT *,day(tra_date_debut) 
+as jour, month(tra_date_debut) 
+as mois, year(tra_date_debut) 
+as annee, day(tra_date_devis)
+as jourD, month(tra_date_devis) 
+as moisD, year(tra_date_devis) 
+as anneeD
 FROM tra_travaux  INNER JOIN cli_client 
 ON tra_travaux.cli_oid = cli_client.cli_oid 
 ORDER BY tra_date_devis desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
@@ -89,13 +93,19 @@ $curMonth = "";
 $curYear = "";
 $table = "";
 while  ($donnees = $reponse->fetch()){
-    if( $curMonth != "" && $curMonth != $donnees['mois']) {
+
+    if( $curMonth != "" && $curMonth != $donnees['moisD'])  {
         //Création de la section du mois précédent
         afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
         $table = "";
+    }elseif($curYear != "" && $curYear != $donnees['anneeD']){
+        afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
+        $table = "";
     }
-    $curMonth = $donnees['mois'];
-    $curYear = $donnees['annee'];
+
+    
+    $curMonth = $donnees['moisD'];
+    $curYear = $donnees['anneeD'];
     $table .= "
     <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
@@ -110,9 +120,12 @@ while  ($donnees = $reponse->fetch()){
     <div class='col-xs-12 visible-xs' id='hoverL'></div>
     </a>";
 }
-afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
 
-//Creation de la pagination de manière dinamyque
+    afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
+
+
+
+//Creation de la pagination de manière dinamique
 echo "<div class='text-center'>";
 for($i=1; $i<=$nbPage; $i++){
     if($i == $cPage){
