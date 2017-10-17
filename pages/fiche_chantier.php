@@ -156,7 +156,7 @@ if (!empty($_POST)){
             <li>
                 <ul class="list-inline">
                 <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">photos</li>
-                <li class="list-group-item btn btn-success"> <a href="?p=galerie&id=<?= $id_chantier ?>">Acceder aux photos</a></li>
+                <li class="list-group-item btn btn-success"> <a class="color" href="?p=galerie&id=<?= $id_chantier ?>">Acceder aux photos</a></li>
                 </ul>
             </li>
         </ul> 

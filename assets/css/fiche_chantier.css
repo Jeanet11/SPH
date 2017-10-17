@@ -4,4 +4,8 @@
         border-left: solid 1px green;
         border-right: solid 1px green;
     }
+
+}
+.color:hover{
+    color: white;
 }
