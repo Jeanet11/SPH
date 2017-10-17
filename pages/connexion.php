@@ -15,7 +15,7 @@ $row = 1;
         if($password === $row['uti_mdp']) {
             $_SESSION['uti_pseudo'] = $pseudo;
             $_SESSION['uti_oid'] = $row['uti_oid'];
-
+            $_SESSION['uti_autorisation'] = $row['uti_autorisation'];
             header('Location: ?p=liste_chantier');
         } else {
             
