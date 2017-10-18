@@ -24,7 +24,7 @@
           Paramètres <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="?p=update_mdp.php">changer le mot de passe</a></li>
+          <li><a href="?p=update_mdp">changer le mot de passe</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="?p=deconnexion">Se déconnecter</a></li>
         </ul>
