@@ -19,7 +19,11 @@ function upload($index, $destination, $maxsize=FALSE, $extensions=FALSE)
         return move_uploaded_file($_FILES[$index]['tmp_name'],$destination);
 }
 
-upload($num,$chemin, 500000, array("jpg","JPG","jpeg","JPEG"));
+upload($num,$chemin, 5000000, array("jpg","JPG","jpeg","JPEG"));
+
+$img = imagecreatefromjpeg($chemin);
+imagejpeg ( $img ,$chemin,10 );
+
 header("location: ?p=galerie&id=".$id);
 
 
