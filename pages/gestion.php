@@ -83,23 +83,23 @@ catch (Exception $e)
             <li class="list-group-item">
                 <h2>Ajouter un compte<h2>
             </li>
-            <li class="list-group-item">
-                <input required class="text-center" required type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?php if (!empty($pseudo)){ echo $pseudo; }else{echo "";} ?>">
+            <li >
+                <input class="list-group-item col-xs-12 text-center" required required type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?php if (!empty($pseudo)){ echo $pseudo; }else{echo "";} ?>">
             </li>        
-            <li class="list-group-item">
-                <input required class="text-center" type="text" name="nom" id="nom" placeholder="Nom" value="<?php if (!empty($nom)){ echo $nom; }else{echo "";} ?>">
+            <li >
+                <input class="list-group-item col-xs-12 text-center" required type="text" name="nom" id="nom" placeholder="Nom" value="<?php if (!empty($nom)){ echo $nom; }else{echo "";} ?>">
             </li>
-            <li class="list-group-item">
-                <input required class="text-center" type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php if (!empty($prenom)){ echo $prenom; }else{echo "";} ?>">
+            <li >
+                <input class="list-group-item col-xs-12 text-center" required type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php if (!empty($prenom)){ echo $prenom; }else{echo "";} ?>">
             </li>
-            <li class="list-group-item">
-                <input required class="text-center" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
+            <li >
+                <input class="list-group-item col-xs-12 text-center" required type="password" name="mdp" id="mdp" placeholder="Mot de passe">
             </li>
-            <li class="list-group-item">
-                <input required class="text-center" type="password" name="mdp_confrim" id="mdp_confrim" placeholder="Confirmer Mot de passe">
+            <li >
+                <input class="list-group-item col-xs-12 text-center" required type="password" name="mdp_confrim" id="mdp_confrim" placeholder="Confirmer Mot de passe">
             </li>
-            <li class="list-group-item">
-                <select class="form-control" name="autorisation" id="autorisation">
+            <li>
+                <select class="form-control text-center" name="autorisation" id="autorisation">
                     <optgroup label="Niveau d'autorisation">
                         <option value="2">Utilisateur</option>
                         <option value="1">Administrateur</option>
