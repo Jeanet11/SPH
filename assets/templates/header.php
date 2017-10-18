@@ -1,3 +1,11 @@
+
+<?php
+// condition d'affichage du lien vers la page admin
+	$admin = '';
+    if($_SESSION['uti_autorisation'] === "1"){
+        $admin =  '<a href="?p=administration" id="admin"><span>administration</span></a>'; 
+    }
+?>
 <section class="container">
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <!-- logo renvoyant vers la liste des chantiers -->
@@ -25,8 +33,8 @@
              <li class="hover"><a  href="?p=nouveau_client">Ajouter un client</a></li>
              <li>
     <!-- formulaire de recherche pour large device -->
-             <form class="navbar-form navbar-right"  method="POST" action="?p=recherche_client">
-                <input type="text" class="form-control hidden-xs" size="50" placeholder="Rechercher un client par son nom"  id="recherche" name="recherche"/>
+             <form class="navbar-form navbar-default col-lg-3"  method="POST" action="?p=recherche_client">
+                <input type="text" class="form-control hidden-xs" size="30" placeholder="Rechercher un client par son nom"  id="recherche" name="recherche"/>
                 <button type="submit" class="btn btn-success hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
              </form>
     <!-- formulaire de recherche pour small device -->
@@ -40,10 +48,12 @@
             </li>
         </ul>
 
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right list-inline">
             <li><a id="hoverDeco" href="?p=deconnexion">Se déconnecter</a></li>
+            <li><?= $admin ?></li>
+            
         </ul>
-    </div>
+
     <!-- fin du navbar-collapse -->
    
 </nav>
