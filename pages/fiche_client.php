@@ -201,3 +201,7 @@ if(!empty($_POST)){
 
 
 
+<?php
+    $valeur = $_GET['id'];
+    var_dump($valeur);
+?>

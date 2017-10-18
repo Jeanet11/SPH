@@ -19,8 +19,8 @@ if (!empty($_POST))
     $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
     $prix = str_replace(',', '.', htmlspecialchars($_POST['montant']));
 
-    $sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_devis, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix) 
-VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s", "%s")', $id_client, $titre, $date_debut, $date_devis, $date_rappel, $description, $mode_de_paiment, $prix);
+    $sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_devis, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix, tra_verif) 
+VALUES ("%s", "%s", "%s", "%s" , "%s", "%s", "%s", "%s", 0)', $id_client, $titre, $date_debut, $date_devis, $date_rappel, $description, $mode_de_paiment, $prix);
     try
         {
         $bdd->query($sql_creation_chantier);
