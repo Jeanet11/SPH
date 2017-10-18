@@ -28,12 +28,14 @@ DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date,
 DATE_FORMAT(tra_date_debut, '%%d/%%m/%%Y') AS date_travaux
 FROM tra_travaux WHERE cli_oid = %d ORDER BY date DESC", $id);
 //execute la requete sql du chantier
+
 try
 {
     $result_info_chantier = $bdd->query($sql_info_chantier)->fetchAll();
 }
+
 catch (Exception $e)
-{
+{       
     die('Erreur : ' . $e->getMessage());
 };
 

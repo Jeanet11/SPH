@@ -1,18 +1,22 @@
     <?php
 
     if(!empty($_POST)){
-
-        $nom_delete = htmlspecialchars($_POST["nom"]);
-        $prenom_delete = htmlspecialchars($_POST["prenom"]);
+            
         
+        $id_chantier = htmlspecialchars ((int) $_POST["id_suppression_chantier_"]);
+        $id_client = htmlspecialchars ((int) $_POST["id_suppression_client"]);
+        include("assets/templates/tryCatch.php");
         
-        $sql_delete_client = sprintf('DELETE  FROM cli_client WHERE cli_oid = %d", $id_client', 
-    $nom_delete, $prenom_delete ); 
+    };
+        
+    
+    $sql_suppr_client = sprintf('DELETE  FROM cli_client WHERE cli_oid = %d", $id_client', 
+    $id_chantier, $id_client); 
     
     try 
     {
 
-        $bdd->query($Sql_delete_client); 
+        $bdd->query($sql_suppr_client); 
     }
 
     catch (Exception $e)
@@ -22,7 +26,7 @@
     };
     
 
-};
 
 
-    ?>
+
+
