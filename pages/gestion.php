@@ -35,15 +35,10 @@ if (!empty($_POST)) {
         $erreur = 'Ce PSEUDO est déjà utilisé.';
     }else {
         //hash du mot de passe
-
-
-
-
-
-
+        $mdp_hash = password_hash($mdp, PASSWORD_DEFAULT);
         //requete sql pour ajouter un utilisateur
         $sql_ajout_uti = sprintf('INSERT INTO uti_utilisateur (uti_pseudo, uti_nom, uti_prenom,
-        uti_mdp, uti_autorisation) VALUES ("%s", "%s", "%s", "%s", %d)', $pseudo, $nom, $prenom, $mdp, $autorisation);
+        uti_mdp, uti_autorisation) VALUES ("%s", "%s", "%s", "%s", %d)', $pseudo, $nom, $prenom, $mdp_hash, $autorisation);
         //Exécution de la requete pour ajouter un utilisateur
         try
         {

@@ -3,23 +3,21 @@ $password = "";
 $row = 1;
     if(isset($_POST)) {
         if(!empty($_POST['co_pseudo']) && !empty($_POST['co_password'])) {
-        //Récupération et sécurisation des parametres
-        $pseudo = htmlspecialchars($_POST['co_pseudo']);
-        $password = $_POST['co_password'];
-        //Vérification mot de passe
-            include('assets/templates/tryCatch.php');
-        //Recherche utilisateur
-        $sql = sprintf('SELECT * FROM uti_utilisateur WHERE uti_pseudo = "%s";', $pseudo);
-        $response = $bdd->query($sql);
-        $row = $response->fetch();
-        if($password === $row['uti_mdp']) {
-            $_SESSION['uti_pseudo'] = $pseudo;
-            $_SESSION['uti_oid'] = $row['uti_oid'];
-            $_SESSION['uti_autorisation'] = $row['uti_autorisation'];
-            header('Location: ?p=liste_chantier');
-        } else {
-            
-        }
+            //Récupération et sécurisation des parametres
+            $pseudo = htmlspecialchars($_POST['co_pseudo']);
+            $password = $_POST['co_password'];
+            //Vérification mot de passe
+                include('assets/templates/tryCatch.php');
+            //Recherche utilisateur
+            $sql = sprintf('SELECT * FROM uti_utilisateur WHERE uti_pseudo = "%s";', $pseudo);
+            $response = $bdd->query($sql);
+            $row = $response->fetch();
+            if(password_verify($password, $row['uti_mdp'])) {
+                $_SESSION['uti_pseudo'] = $pseudo;
+                $_SESSION['uti_oid'] = $row['uti_oid'];
+                $_SESSION['uti_autorisation'] = $row['uti_autorisation'];
+                header('Location: ?p=liste_chantier');
+            } 
         }
     }
 ?>
