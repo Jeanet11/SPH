@@ -20,6 +20,9 @@
     background-color: rgb(220, 236, 217);
 }
 
-#admin {
-    color: red;
+.parametres {
+	left: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: rgb(220, 236, 217);   
 }
