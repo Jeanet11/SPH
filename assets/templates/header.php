@@ -3,8 +3,36 @@
 // condition d'affichage du lien vers la page admin
 	$admin = '';
     if($_SESSION['uti_autorisation'] === "1"){
-        $admin =  '<a href="?p=administration" id="admin"><span>administration</span></a>'; 
+        $admin = 
+        '
+        <div class="btn-group parametres">
+        <button type="button" class="btn btn-success dropdown-toggle  " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Paramètres <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="?p=gestion.php">administration</a></li>
+          <li><a href="?p=update_mdp.php">Changer le mot de passe</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="?p=deconnexion">Se déconnecter</a></li>
+        </ul>
+      </div> ';
+    } else {
+        $admin = 
+        '
+        <div class="btn-group parametres">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Paramètres <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="?p=update_mdp.php">changer le mot de passe</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="?p=deconnexion">Se déconnecter</a></li>
+        </ul>
+      </div> ';
     }
+
+
+
 ?>
 <section class="container">
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
@@ -49,7 +77,7 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right list-inline">
-            <li><a id="hoverDeco" href="?p=deconnexion">Se déconnecter</a></li>
+            <!-- <li><a id="hoverDeco" href="?p=deconnexion">Se déconnecter</a></li> -->
             <li><?= $admin ?></li>
             
         </ul>
