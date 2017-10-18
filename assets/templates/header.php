@@ -10,8 +10,8 @@
           Paramètres <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="?p=gestion.php">administration</a></li>
-          <li><a href="?p=update_mdp.php">Changer le mot de passe</a></li>
+          <li><a href="?p=administration">administration</a></li>
+          <li><a href="?p=update_mdp">Changer le mot de passe</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="?p=deconnexion">Se déconnecter</a></li>
         </ul>
