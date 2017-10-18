@@ -19,3 +19,7 @@
 #hoverDeco:hover{
     background-color: rgb(220, 236, 217);
 }
+
+#admin {
+    color: red;
+}
