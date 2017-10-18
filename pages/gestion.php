@@ -119,32 +119,49 @@ catch (Exception $e)
 
 
 <?php//--------------------------------LISTE UTILISATEURS--------------------------?>
-    <div id="affiche_uti" class="col-xs-12"     
+    <div id="affiche_uti" class="col-xs-12">     
     <?php if (empty($uti_ajouter)){ 
-            echo 'style="display:none"';
+            // echo 'style="display:none"';
             }; 
             unset($uti_ajouter);
-    ?>> 
-        <ul class="list-inline">
-            <li class="list-group-item col-sm-3 col-xs-6"><strong>Nom</strong></li>                                   
-            <li class="list-group-item col-sm-3 col-xs-6"><strong>Prénom</strong></li>
-            <li class="list-group-item col-sm-3 col-xs-6"><strong>Pseudo</strong></strong></li>
-            <li class="list-group-item col-sm-3 col-xs-6"><strong>Type de compte</strong></li>
+    ?> 
+        
+        <ul class="list-inline titre hidden-xs uti">
+            <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>Nom</strong></li>                                   
+            <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>Prénom</strong></li>
+            <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>Pseudo</strong></strong></li>
+            <li class="list-group-item col-sm-3 col-xs-1 hidden-xs"><strong>Type de compte</strong></li>
+           
+        </ul>
+        <ul class="list-inline titre visible-xs uti">
+            <li class="list-group-item col-sm-3 col-xs-3 visible-xs"><strong>Nom</strong></li>                                   
+            <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>Prénom</strong></li>
+            <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>Pseudo</strong></strong></li>
+            <li class="list-group-item col-sm-3 col-xs-1 visible-xs"><strong>C</strong></li>
         </ul>
     <?php
         foreach ($result_liste_utilisateurs as $value) {
             if ($value["uti_autorisation"] == 1) {
+                $aut_xs = "A";
                 $aut = "Administrateur";
             }elseif($value["uti_autorisation"] == 2){
+                $aut_xs = "U";
                 $aut = "Utilisateur";
             }
             echo
-                '<ul class="list-inline">
-                    <li class="list-group-item col-sm-3 col-xs-6"><strong>'.$value["uti_nom"].'</strong></li>                                   
-                    <li class="list-group-item col-sm-3 col-xs-6"><strong>'.$value["uti_prenom"].'</strong></li>
-                    <li class="list-group-item col-sm-3 col-xs-6">'.$value["uti_pseudo"].'</li>
-                    <li class="list-group-item col-sm-3 col-xs-6">'.$aut.'</li>
-                </ul>';
+                '<ul class="list-inline hidden-xs uti">
+                    <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs">'.$value["uti_pseudo"].'</li>
+                    <li class="list-group-item col-sm-3 col-xs-1 hidden-xs">'.$aut.'</li>
+                </ul>
+                <ul class="list-inline visible-xs uti">
+                <li class="list-group-item col-sm-3 col-xs-3 visible-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
+                <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>'.$value["uti_prenom"].'</strong></li>
+                <li class="list-group-item col-sm-3 col-xs-4 visible-xs">'.$value["uti_pseudo"].'</li>
+                <li class="list-group-item col-sm-3 col-xs-1 visible-xs">'.$aut_xs.'</li>
+            </ul>
+                ';
         }
         ?>
     </div>
