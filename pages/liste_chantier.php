@@ -10,8 +10,9 @@ if (empty($_SESSION['uti_pseudo'])){
 
 
 <?php
+include('pages/alerte.php');
 
-
+?></table><?php
 include('assets/templates/tryCatch.php');
 //Requete pour la pagination
 $sql = "SELECT count(tra_oid) as nbArt from tra_travaux";
@@ -29,7 +30,7 @@ if(isset($_GET['d']) && $_GET['d']>0 && $_GET['d']<=$nbPage){
     $cPage = 1;
 }
 
-//Alerte des chantier vieux de 1 an
+
 
 
 //requete pour l'affichage liste chantier
@@ -39,18 +40,20 @@ as mois, year(tra_date_debut)
 as annee, day(tra_date_devis)
 as jourD, month(tra_date_devis) 
 as moisD, year(tra_date_devis) 
-as anneeD
+as anneeD 
 FROM tra_travaux  INNER JOIN cli_client 
 ON tra_travaux.cli_oid = cli_client.cli_oid 
 ORDER BY tra_date_devis desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
-?>
 
 
-<?php
+
 //verifie l'identification
 if (empty($_SESSION['uti_pseudo'])){
     header("Location: ?p=connexion");
 };
+
+
+
 function afficherBlocMois($mois, $annee, $table){
     $num2mois = array(1=>'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet',
     'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
@@ -93,11 +96,14 @@ $curMonth = "";
 $curYear = "";
 $table = "";
 while  ($donnees = $reponse->fetch()){
-
+    
+    
+    
     if( $curMonth != "" && $curMonth != $donnees['moisD'])  {
         //Création de la section du mois précédent
         afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
         $table = "";
+        //Si l'annee courante n'est pas égale à lannée devis, créer un nouveau panel
     }elseif($curYear != "" && $curYear != $donnees['anneeD']){
         afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
         $table = "";
@@ -109,7 +115,7 @@ while  ($donnees = $reponse->fetch()){
     $table .= "
     <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
-        <li class='col-sm-2 col-xs-3''>" . $donnees['jourD'] ."/".$donnees['moisD']."/". $donnees['anneeD']. "</li>
+        <li class='col-sm-2 col-xs-3'>" . $donnees['jourD'] ."/".$donnees['moisD']."/". $donnees['anneeD']. "</li>
         <li class='col-sm-2 col-xs-12'>" . $donnees['jour'] ."/" . $donnees['mois'] . "/" . $donnees['annee'] . "</li>
         <li class='col-sm-2 hidden-xs text-uppercase'>" . $donnees['cli_nom'] . "</li>
         <li class='col-sm-2 hidden-xs'>" . $donnees['cli_prenom'] . "</li>
@@ -119,10 +125,10 @@ while  ($donnees = $reponse->fetch()){
     </ul>
     <div class='col-xs-12 visible-xs' id='hoverL'></div>
     </a>";
+    
 }
 
     afficherBlocMois($curMonth, $curYear, $tableDebut.$table.$tableFin);
-
 
 
 //Creation de la pagination de manière dinamique
@@ -138,3 +144,4 @@ for($i=1; $i<=$nbPage; $i++){
 }
 echo "</div>";
 ?>
+

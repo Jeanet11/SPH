@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
     <link rel="stylesheet" href="assets/css/liste_chantier.css">
+    <link rel="stylesheet" href="assets/css/alerte.css">
     
     <link rel="stylesheet" href="assets/css/fiche_client.css">
     
@@ -43,7 +44,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.min.js"></script>
 
     
-
+    <script src="assets/js/liste_chantier.js"></script>
     <script src="assets/js/fiche_chantier.js"></script>
     <script src="assets/js/gestion.js"></script>
 
