@@ -52,7 +52,7 @@ $date_mtn = date('Y-m-d');
             <div class="form-group">
                 <label for="montant">Montant :</label>
                 <div class="input-group">
-                <input min="0" step="0.01" name="montant" type="number" class="form-control text-right" id="montant">   
+                <input required min="0" step="0.01" name="montant" type="number" class="form-control text-right" id="montant">   
                 <div class="input-group-addon">€</div>
                 </div>
             </div>
