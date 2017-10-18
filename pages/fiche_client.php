@@ -122,14 +122,20 @@ if(!empty($_POST)){
 <!-- HTML -->
 <div class="container">
 <section class="container">
-<!-- RETOUR LISTE CLIENT -->
-<form class=""  method="POST" action="?p=recherche_client">
-        <input type="text" class="hidden" id="recherche" name="recherche"/>
-    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Liste des clients</button>
-</form>
-<!-- BOUTON SUPPRESION -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Supprimer</button>
-<?= $suppression ?>
+    <div class="text-left col-xs-6">
+        <!-- RETOUR LISTE CLIENT -->
+        <form  method="POST" action="?p=recherche_client">
+            <input type="text" class="hidden" id="recherche" name="recherche"/>
+            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Liste des clients</button>
+        </form>
+    </div>
+    <div class="text-right col-xs-6">
+        <!-- BOUTON SUPPRESION -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Supprimer</button>
+    </div>
+
+
+    <?= $suppression ?>
     <form action="" method="post">
         <section class="col-xs-12">
             <div class="row list-group-item ">
