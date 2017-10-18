@@ -5,7 +5,7 @@ uti_pseudo varchar(60),
 unique (uti_pseudo),
 uti_nom varchar(60),
 uti_prenom varchar(60),
-uti_mdp varchar(60),
+uti_mdp varchar(250),
 uti_autorisation int not null
 );
 
