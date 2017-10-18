@@ -63,7 +63,7 @@ if(empty($result_info_chantier)){
                         <p>Etes-vous sûre de vouloir supprimer le client suivant : '.$nom.' '.$prenom.' ?</p>
                     </div>
                     <div class="modal-footer">
-                        <input type="text" class="hidden" id="id_suppression" name="id_suppression" value="'.$id.'"/>
+                        <input type="text" class="hidden" id="id_suppression_client" name="id_suppression_client" value="'.$id.'"/>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
                         <input class="btn btn-danger" type="submit" name="submit" value="Supprimer" />
                     </div>

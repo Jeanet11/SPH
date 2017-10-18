@@ -70,6 +70,9 @@ if($p === 'suppression') {
 if($p === 'suppression_chantier') {
 	include('./pages/suppression_chantier.php');
 }
+if($p === 'suppression_client') {
+	include('./pages/suppression_client.php');
+}
 
 $content = ob_get_clean();
 include('assets/templates/default.php');
