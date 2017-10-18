@@ -116,9 +116,12 @@ if (!empty($_POST)){
 //--------------------------------------HTML------------------------------------------
 ?>
 <div class="container">
-<a class="btn btn-success" href="?p=fiche_client&id=<?= $id_client ?>"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> CLIENT</span></a>
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#suppression_chantier">Supprimer</button>
-
+    <div class="text-left col-xs-6">
+        <a class="btn btn-success" href="?p=fiche_client&id=<?= $id_client ?>"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> CLIENT</span></a>
+    </div>
+    <div class="text-right col-xs-6">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#suppression_chantier">Supprimer</button>
+    </div>
     <section class="col-sm-12 contour">
         <ul class="list-inline col-sm-12">
             <li class="list-group-item">Ref client : <?= $id_client ?></li>
