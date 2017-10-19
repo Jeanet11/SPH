@@ -30,7 +30,7 @@ if(isset($_GET['d']) && $_GET['d']>0 && $_GET['d']<=$nbPage){
     $cPage = 1;
 }
 
-
+$dateEnCour = date("Y");
 
 
 //requete pour l'affichage liste chantier
@@ -43,6 +43,7 @@ as moisD, year(tra_date_devis)
 as anneeD 
 FROM tra_travaux  INNER JOIN cli_client 
 ON tra_travaux.cli_oid = cli_client.cli_oid 
+WHERE year(tra_date_devis) = '.$dateEnCour.'
 ORDER BY tra_date_devis desc LIMIT '.(($cPage-1)*$perPage).','.$perPage);
 
 
