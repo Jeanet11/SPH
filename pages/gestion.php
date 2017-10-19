@@ -54,7 +54,7 @@ if (!empty($_POST)) {
 }
 //--------------------------------LISTE UTILISATEURS--------------------------
 //requete pour l'affichage des utilisateurs
-$sql_info_uti = sprintf("SELECT uti_pseudo, uti_nom, uti_prenom, uti_autorisation FROM uti_utilisateur ORDER BY uti_pseudo ASC");
+$sql_info_uti = sprintf("SELECT uti_oid, uti_pseudo, uti_nom, uti_prenom, uti_autorisation FROM uti_utilisateur ORDER BY uti_pseudo ASC");
 //execute la requete pour l'affichage des utilisateurs
 try
 {
@@ -114,13 +114,13 @@ catch (Exception $e)
 
 
 <?php//--------------------------------LISTE UTILISATEURS--------------------------?>
-    <div id="affiche_uti" class="col-xs-12">     
+    <div id="affiche_uti" class="col-xs-12"    
     <?php if (empty($uti_ajouter)){ 
-            // echo 'style="display:none"';
+            echo 'style="display:none"';
             }; 
             unset($uti_ajouter);
-    ?> 
-        
+    ?>>
+       
         <ul class="list-inline titre hidden-xs uti">
             <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>Nom</strong></li>                                   
             <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>Prénom</strong></li>
@@ -142,21 +142,33 @@ catch (Exception $e)
             }elseif($value["uti_autorisation"] == 2){
                 $aut_xs = "U";
                 $aut = "Utilisateur";
-            }
-            echo
-                '<ul class="list-inline hidden-xs uti">
-                    <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
-                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
-                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs">'.$value["uti_pseudo"].'</li>
-                    <li class="list-group-item col-sm-3 col-xs-1 hidden-xs">'.$aut.'</li>
-                </ul>
-                <ul class="list-inline visible-xs uti">
+            };
+$form = '
+<ul class="list-inline hidden-xs uti">
+<li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
+<li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
+<li class="list-group-item col-sm-3 col-xs-4 hidden-xs">'.$value["uti_pseudo"].'</li>
+<li class="list-group-item col-sm-3 col-xs-1 hidden-xs">'.$aut.'</li>
+</ul>
+<ul class="list-inline visible-xs uti">
                 <li class="list-group-item col-sm-3 col-xs-3 visible-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
                 <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>'.$value["uti_prenom"].'</strong></li>
                 <li class="list-group-item col-sm-3 col-xs-4 visible-xs">'.$value["uti_pseudo"].'</li>
                 <li class="list-group-item col-sm-3 col-xs-1 visible-xs">'.$aut_xs.'</li>
             </ul>
-                ';
+';
+//  <?php          
+  echo
+                '
+           
+            <form method="POST" action="?p=reinit_mdp">
+            <input type="hidden" name="libelle" value="test" />
+            <input type="submit" value= "<?= $form ?>" />
+                
+               
+            
+            </form>
+              ';
         }
         ?>
     </div>
