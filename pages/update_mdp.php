@@ -27,15 +27,13 @@ if (!empty($_POST)){
 
     //ancien mot de passe valide
     if (password_verify($mdp_courant,$mdp_bdd_actuel["uti_mdp"])){
-        echo "mdp valide"; // a supprimer
         //COMPARAISON DES 2 NOUVEAUX MDP
         if($mdp_nouveau !== $mdp_nouveau_verif){
-            echo "Les mots de passe ne correspondent pas";
+            $erreur = "Les mots de passe ne correspondent pas";
         }else{
-            echo "nouveau mdp valide"; // a supprimer
             //COMPARAISON DE L'ANCIEN ET DU NOUVEAU MDP
             if ($mdp_nouveau === $mdp_courant){
-                echo "L'ancien et le nouveau mot de passe ne peut être identique'";
+                $erreur = "L'ancien et le nouveau mot de passe ne peut être identique'";
             }else{
                 //toutes les verifications sont bonnes :
                 $mdp_hash = password_hash($mdp_nouveau, PASSWORD_DEFAULT);
@@ -53,7 +51,7 @@ if (!empty($_POST)){
             };
         };
     }else{
-        echo "Le mot de passe actuel est invalide";
+        $erreur = "Le mot de passe actuel est invalide";
     };
 
 
@@ -67,6 +65,11 @@ if (!empty($_POST)){
 <section class="container">
     <form action="" method="post" class="text-center">
         <h2>Modification du mot de passe</h2>
+        <?php
+            if (!empty($erreur)){
+                echo "<h3>".$erreur."</h3>";
+            };
+        ?>
         <div class="col-sm-offset-4 col-sm-4 col-xs-12">
             <ul class="list-group list-unstyled">
                 <li>

@@ -175,19 +175,17 @@ if(!empty($_POST)){
         <section class="col-sm-offset-2 col-sm-6 col-xs-12">
             <br />
             <ul class="list-inline">
-                <li class="list-group-item col-xs-2">D. Devis</li>
-                <li class="list-group-item col-xs-2">D. Travaux</li>                                   
-                <li class="list-group-item col-xs-6">Nature des travaux</li>
-                <li class="list-group-item col-xs-2 text-right">Prix</li>
+                <li class="list-group-item col-xs-4">D. Travaux</li>                                   
+                <li class="list-group-item col-xs-5">Nature des travaux</li>
+                <li class="list-group-item col-xs-3 text-right">Prix</li>
             </ul>
             <?php
             foreach ($result_info_chantier as $value) {
                 echo
                     '<a href="?p=fiche_chantier&id='.$value["tra_oid"].'"><ul class="list-inline">
-                        <li class="list-group-item col-xs-2">'.$value["date"].'</li>
-                        <li class="list-group-item col-xs-2">'.$value["date_travaux"].'</li>                                   
-                        <li class="list-group-item col-xs-6">'.$value["tra_titre"].'</li>
-                        <li class="list-group-item col-xs-2 text-right">'.$value["tra_prix"].' €</li>
+                        <li class="list-group-item col-xs-4">'.$value["date_travaux"].'</li>                                   
+                        <li class="list-group-item col-xs-5">'.$value["tra_titre"].'</li>
+                        <li class="list-group-item col-xs-3 text-right">'.$value["tra_prix"].' €</li>
                     </ul></a>';
             }
             ?>
@@ -198,6 +196,3 @@ if(!empty($_POST)){
         </div>
     </form>
 </div>
-
-
-

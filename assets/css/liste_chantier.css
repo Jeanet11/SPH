@@ -27,3 +27,15 @@ a:hover{
     border-radius: 7px;
     color: #449D44;
 }
+
+.rond{
+    color: rgb(255, 255, 255);
+    
+}
+.titreChantier{
+    font-family: 'Paprika', cursive;
+}
+.rond:hover{
+    color: lightgreen;
+    
+}
