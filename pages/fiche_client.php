@@ -198,10 +198,3 @@ if(!empty($_POST)){
         </div>
     </form>
 </div>
-
-
-
-<?php
-    $valeur = $_GET['id'];
-    var_dump($valeur);
-?>
