@@ -77,6 +77,10 @@ if($p === 'update_mdp') {
 	include('./pages/update_mdp.php');
 }
 
+if($p === 'reinit_mdp') {
+	include('./pages/reinit_mdp.php');
+}
+
 $content = ob_get_clean();
 include('assets/templates/default.php');
 ?>

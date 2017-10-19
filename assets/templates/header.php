@@ -6,12 +6,12 @@
         $admin = 
         '
         <div class="btn-group parametres">
-        <button type="button" class="btn btn-success dropdown-toggle  " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-success dropdown-toggle parametres " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Paramètres <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="?p=administration">administration</a></li>
-          <li><a href="?p=update_mdp">Changer le mot de passe</a></li>
+          <li><a href="?p=administration">Administration</a></li>
+          <li><a href="?p=update_mdp">Changer mon mot de passe</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="?p=deconnexion">Se déconnecter</a></li>
         </ul>
@@ -20,11 +20,11 @@
         $admin = 
         '
         <div class="btn-group parametres">
-        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-success dropdown-toggle parametres" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Paramètres <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="?p=update_mdp.php">changer le mot de passe</a></li>
+          <li><a href="?p=update_mdp">changer le mot de passe</a></li>
           <li role="separator" class="divider"></li>
           <li><a href="?p=deconnexion">Se déconnecter</a></li>
         </ul>
