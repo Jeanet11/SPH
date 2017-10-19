@@ -92,7 +92,7 @@ ORDER BY tra_date_debut');
                 <h4 class='modal-title'>CONFIRMER LA VALIDATION</h4>
                 </div>
                 <div class='modal-body'>
-                <p>Etes-vous sûre de vouloir valider le chantier du " . $ligne['jour'] . '/' . $ligne['mois'] . '/' . $ligne['annee'] . " ? </p>
+                <p>Etes-vous sûr(e) de vouloir valider le chantier du " . $ligne['jour'] . '/' . $ligne['mois'] . '/' . $ligne['annee'] . " ? </p>
                 </div>
                 <div class='modal-footer'>
                 <form method='POST' action=''>
