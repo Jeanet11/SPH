@@ -16,6 +16,17 @@ if (!empty($_POST)){
 
 
 <?php
+	$str ="<ul class='list-inline row' id='entete'>
+	
+				<li class='list-group-item col-md-offset-1 col-md-1 col-xs-1'>Référence</li>
+				
+				<li class='list-group-item col-md-3 col-xs-5'>Nom</li>
+				
+				<li class='list-group-item col-md-2 col-xs-6'>Prénom</li>
+				<li class='list-group-item col-md-1 col-xs-6'>Cp</li>
+				<li class='list-group-item col-md-3 col-xs-6'>Ville</li>
+			</ul>";
+			echo $str;
 	
 
     while($donnees = $reponse->fetch())
@@ -23,6 +34,7 @@ if (!empty($_POST)){
 
 
 ?>
+
 
 		<a  href="?p=fiche_client&id=<?= $donnees['cli_oid']  ?>">
 	<ul class="list-inline row">
