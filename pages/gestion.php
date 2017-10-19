@@ -170,12 +170,12 @@ $prenom_xs = substr($prenom, 0, 1);
              <span class="uti">
                 <ul class="list-inline hidden-xs uti">
                     <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
-                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
-                    <li class="list-group-item col-sm-3 hidden-xs">'.$prenom.'</li>
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$prenom.'</strong></li>
+                    <li class="list-group-item col-sm-3 hidden-xs">'.$value["uti_pseudo"].'</li>
                     <li class="list-group-item col-sm-2 hidden-xs">'.$aut.'</li>
                     <li class=" col-sm-1 hidden-xs text-center">
                     <form method="post" action="?p=reinit_mdp">  
-                    <input type="text" class="hidden" value="'.$value["uti_oid"].'" />
+                    <input type="text" class="hidden" name="uti_oid_temp" value="'.$value["uti_oid"].'" />
                     <button class="btn reinit-mdp" type="submit" title="Réinitialisation du mot de passe"><span class="glyphicon glyphicon-cog"></span></button>
                     </form>
                     </li>

@@ -77,9 +77,6 @@ if($p === 'update_mdp') {
 	include('./pages/update_mdp.php');
 }
 
-if($p === 'update_mdp') {
-	include('./pages/update_mdp.php');
-}
 
 if($p === 'reinit_mdp') {
 	include('./pages/reinit_mdp.php');
