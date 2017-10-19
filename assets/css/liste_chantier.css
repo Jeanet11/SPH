@@ -29,6 +29,13 @@ a:hover{
 }
 
 .rond{
-    color: green;
+    color: rgb(255, 255, 255);
+    
+}
+.titreChantier{
+    font-family: 'Paprika', cursive;
+}
+.rond:hover{
+    color: lightgreen;
     
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="refresh" content="3600 ; index.php">
 
+    <link href="https://fonts.googleapis.com/css?family=Paprika" rel="stylesheet">
     <link rel="icon" href="assets/images/favicon.ico" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/creation_chantier.css">
