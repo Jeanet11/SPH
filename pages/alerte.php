@@ -77,7 +77,7 @@ ORDER BY tra_date_debut');
 
 
                         
-                    <button type='button' class='' data-toggle='modal' data-target='#myModal" . $ligne['tra_oid'] . "'><span class='glyphicon glyphicon-ok rond' aria-hidden='true'></span></button>
+                    <button type='button' class='btn-success' data-toggle='modal' data-target='#myModal" . $ligne['tra_oid'] . "'><span class='glyphicon glyphicon-ok rond secondary' aria-hidden='true'></span></button>
                     </li>
                 </ul>
                 <div id='myModal" . $ligne['tra_oid'] . "' class='modal fade' tabindex='-1' role='dialog'>
