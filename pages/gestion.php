@@ -142,32 +142,25 @@ catch (Exception $e)
             }elseif($value["uti_autorisation"] == 2){
                 $aut_xs = "U";
                 $aut = "Utilisateur";
-            };
-$form = '
-<ul class="list-inline hidden-xs uti">
-<li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
-<li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
-<li class="list-group-item col-sm-3 col-xs-4 hidden-xs">'.$value["uti_pseudo"].'</li>
-<li class="list-group-item col-sm-3 col-xs-1 hidden-xs">'.$aut.'</li>
-</ul>
-<ul class="list-inline visible-xs uti">
+            }
+$prenom = $value["uti_prenom"];
+$prenom_xs = substr($prenom, 0, 1);
+            echo
+                '
+               
+                <ul class="list-inline hidden-xs uti">
+                    <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$value["uti_prenom"].'</strong></li>
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs">'.$prenom.'</li>
+                    <li class="list-group-item col-sm-3 col-xs-1 hidden-xs">'.$aut.'</li>
+                    
+                </ul>
+                <ul class="list-inline visible-xs uti">
                 <li class="list-group-item col-sm-3 col-xs-3 visible-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
-                <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>'.$value["uti_prenom"].'</strong></li>
+                <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>'.$prenom_xs.'</strong></li>
                 <li class="list-group-item col-sm-3 col-xs-4 visible-xs">'.$value["uti_pseudo"].'</li>
                 <li class="list-group-item col-sm-3 col-xs-1 visible-xs">'.$aut_xs.'</li>
             </ul>
-';
-//  <?php          
-  echo
-                '
-           
-            <form method="POST" action="?p=reinit_mdp">
-            <input type="hidden" name="libelle" value="test" />
-            <input type="submit" value= "<?= $form ?>" />
-                
-               
-            
-            </form>
               ';
         }
         ?>
