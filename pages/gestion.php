@@ -169,8 +169,8 @@ $prenom_xs = substr($prenom, 0, 1);
                 ' <a class="lien_mdp" href="#">
              <span class="uti">
                 <ul class="list-inline hidden-xs uti">
-                    <li class="list-group-item col-sm-3 col-xs-3 hidden-xs"><strong>'.$value["uti_nom"].'</strong></li>                                   
-                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs"><strong>'.$prenom.'</strong></li>
+                    <li class="list-group-item col-sm-3 col-xs-3 hidden-xs text-uppercase"><strong>'.$value["uti_nom"].'</strong></li>                                   
+                    <li class="list-group-item col-sm-3 col-xs-4 hidden-xs text-capitalize"><strong>'.$prenom.'</strong></li>
                     <li class="list-group-item col-sm-3 hidden-xs">'.$value["uti_pseudo"].'</li>
                     <li class="list-group-item col-sm-2 hidden-xs">'.$aut.'</li>
                     <li class=" col-sm-1 hidden-xs text-center">
@@ -183,8 +183,8 @@ $prenom_xs = substr($prenom, 0, 1);
                 </ul></span>
 
                 <ul class="list-inline visible-xs uti">
-                <li class="list-group-item col-sm-3 col-xs-3 visible-xs"><strong>'.$value["uti_nom"].'</strong></li>
-                <li class="list-group-item col-sm-3 col-xs-4 visible-xs"><strong>'.$prenom_xs.'</strong></li>
+                <li class="list-group-item col-sm-3 col-xs-3 visible-xs text-uppercase"><strong>'.$value["uti_nom"].'</strong></li>
+                <li class="list-group-item col-sm-3 col-xs-4 visible-xs text-capitalize"><strong>'.$prenom_xs.'</strong></li>
                 <li class="list-group-item col-sm-3 col-xs-4 visible-xs">'.$value["uti_pseudo"].'</li>
                 <li class="list-group-item col-sm-3 col-xs-1 visible-xs">'.$aut_xs.'</li>
             </ul>
