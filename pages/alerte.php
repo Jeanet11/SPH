@@ -1,4 +1,8 @@
 <?php
+//verifie l'identification
+if (empty($_SESSION['uti_pseudo'])) {
+    header("Location: ?p=connexion");
+};
 include('assets/templates/tryCatch.php');
 $date1 = date("m") + 1;
 if($date1 > 12){
