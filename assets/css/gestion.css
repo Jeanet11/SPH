@@ -1,9 +1,16 @@
-.titre {
-    background-color: rgb(220, 236, 217);
-}
-
 .uti {
     position: relative;
     left: 0;
-   
+    background-color: rgb(220, 236, 217);
+}
+
+
+.reinit-mdp {
+    margin-top: 6%;
+    left: 0;
+    
+}
+
+#lien_mdp:hover {
+    background-color: rgb(220, 236, 217);
 }
