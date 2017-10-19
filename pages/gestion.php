@@ -30,7 +30,7 @@ if (!empty($_POST)) {
     };
 
     if ($mdp !== $mdp_confrim) {
-        $erreur = 'Les mots de passes de correspondent pas.';
+        $erreur = 'Les mots de passe de correspondent pas.';
     }elseif (!empty($result_pseudo_unique)) {
         $erreur = 'Ce PSEUDO est déjà utilisé.';
     }else {

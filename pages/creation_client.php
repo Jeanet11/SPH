@@ -93,7 +93,7 @@ if (!empty($_POST)){
         </section>
         <section class="row">
             <div class="form-group col-sm-4">
-                <label for="tel">TELEPHONNE :</label>
+                <label for="tel">TELEPHONE :</label>
                 <input type="text" class="form-control" id="tel" name="tel" placeholder="N° téléphone">
             </div>
             <div class="form-group col-sm-4">

@@ -33,7 +33,7 @@ if (!empty($_POST)){
         }else{
             //COMPARAISON DE L'ANCIEN ET DU NOUVEAU MDP
             if ($mdp_nouveau === $mdp_courant){
-                $erreur = "L'ancien et le nouveau mot de passe ne peut être identique'";
+                $erreur = "L'ancien mot de passe et le nouveau mot de passe ne peuvent être identiques'";
             }else{
                 //toutes les verifications sont bonnes :
                 $mdp_hash = password_hash($mdp_nouveau, PASSWORD_DEFAULT);

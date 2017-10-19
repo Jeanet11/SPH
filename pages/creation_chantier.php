@@ -58,7 +58,7 @@ $date_mtn = date('Y-m-d');
             </div>
         </div>
         <div class="col-sm-2 col-xs-12 text-center">
-            <label for="mode_de_paiment">Moyen de paiment :</label>
+            <label for="mode_de_paiment">Moyen de paiement :</label>
             <input type="text" class="form-control" id="mode_de_paiment"  name="mode_de_paiment"></div>
         </div>
         <div class ="row">

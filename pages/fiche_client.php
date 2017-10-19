@@ -60,7 +60,7 @@ if(empty($result_info_chantier)){
                         <h4 class="modal-title">CONFIRMER LA SUPPRESSION</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Etes-vous sûre de vouloir supprimer le client suivant : '.$nom.' '.$prenom.' ?</p>
+                        <p>Etes-vous sûr(e) de vouloir supprimer le client suivant : '.$nom.' '.$prenom.' ?</p>
                     </div>
                     <div class="modal-footer">
                         <input type="text" class="hidden" id="id_suppression_client" name="id_suppression_client" value="'.$id.'"/>
@@ -82,7 +82,7 @@ if(empty($result_info_chantier)){
                     </div>
                     <div class="modal-body">
                         <p>Impossible de supprimer un client qui possède des chantiers.</p>
-                        <p>Veuillez supprimer les chantier de '.$nom.' '.$prenom.' avant de poursuivre.</p>
+                        <p>Veuillez supprimer les chantiers de '.$nom.' '.$prenom.' avant de poursuivre.</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
