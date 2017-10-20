@@ -3,6 +3,9 @@
 if (empty($_SESSION['uti_pseudo'])){
     header("Location: ?p=connexion");
 };
+if ($_SESSION['uti_autorisation'] != 1) {
+    header("Location: ?p=liste_chantier");
+};
 //accès a la BDD
 if (empty( $_SESSION["uti_oid_temp"])){
     $_SESSION["uti_oid_temp"] = $_POST['uti_oid_temp']; 
