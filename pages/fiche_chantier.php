@@ -43,8 +43,8 @@ if (file_exists($file)) {
     return '<li">
     <ul class="list-inline">
         <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">'.$type.'</li>
-        <li class="list-group-item btn btn-success">
-            <a class="" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
+        <li class="list-group-item">
+            <a class="btn btn-success" href="?p=pdf&id='.$id.'&type='.$type.'" target="_blank">Ouvrir le fichier</a>
         </li>
         <li class="list-group-item">
             <form method="post" action="?p=suppression">
@@ -157,9 +157,9 @@ if (!empty($_POST)){
             <?= verif_exist("garantie",$id_chantier) ?>
 
             <li>
-                <ul class="list-inline">
+                <ul class="list-inline text-left">
                 <li class="list-group-item col-sm-2 col-xs-12 text-uppercase">photos</li>
-                <li class="list-group-item btn btn-success"> <a class="color" href="?p=galerie&id=<?= $id_chantier ?>">Accéder aux photos</a></li>
+                <li class="list-group-item"><a class=" btn btn-success" href="?p=galerie&id=<?= $id_chantier ?>">Accéder aux photos</a></li>
                 </ul>
             </li>
         </ul> 
