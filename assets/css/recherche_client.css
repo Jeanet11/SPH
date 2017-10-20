@@ -1,10 +1,13 @@
 a:hover {
-   
-     color: #449D44;
+
+    color: #449D44;
 
 }
 
 #entete{
     color: #449D44 ;
     font-weight: bold;
+}
+.champ{
+    word-wrap: break-word;
 }

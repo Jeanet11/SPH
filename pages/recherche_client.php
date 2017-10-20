@@ -27,11 +27,11 @@ if ((!empty($reponse))):
 		?>
 		<a  href="?p=fiche_client&id=<?= $donnees['cli_oid'] ?>">
 			<ul class="list-inline row">
-        <li class="list-group-item col-md-offset-1 col-md-1 col-xs-1"> <?= $donnees['cli_oid']; ?></li>
-				<li class="list-group-item col-md-3 col-xs-5"> <?= $donnees['cli_nom']; ?></li>
-				<li class="list-group-item col-md-2 col-xs-6"> <?= $donnees['cli_prenom']; ?></li>
-				<li class="list-group-item col-md-1 col-xs-6"> <?= $donnees['cli_cp']; ?></li>
-				<li class="list-group-item col-md-3 col-xs-6"> <?= $donnees['cli_ville']; ?></li>
+        		<li class="list-group-item col-md-offset-1 col-md-1 col-xs-1 champ"> <?= $donnees['cli_oid']; ?></li>
+				<li class="list-group-item col-md-3 col-xs-5 champ"> <?= $donnees['cli_nom']; ?></li>
+				<li class="list-group-item col-md-2 col-xs-6 champ"> <?= $donnees['cli_prenom']; ?></li>
+				<li class="list-group-item col-md-1 col-xs-6 champ"> <?= $donnees['cli_cp']; ?></li>
+				<li class="list-group-item col-md-3 col-xs-6 champ"> <?= $donnees['cli_ville']; ?></li>
 			</ul>
 		</a>	
 <?php
