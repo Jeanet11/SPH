@@ -38,7 +38,7 @@ $date_mtn = date('Y-m-d');
     <div class="row">
         <div class="col-sm-4 text-center">
             <label class="" for="nom_du_chantier">Nature des travaux:</label>
-            <input required type="text" class="form-control" id="nom_du_chantier"  name="nom_du_chantier">
+            <input required type="text" maxlength="40" class="form-control" id="nom_du_chantier"  name="nom_du_chantier">
         </div>
         <div class="col-sm-2 col-xs-12 text-center">
             <label for="date_devis">Date Devis :</label>
@@ -59,7 +59,7 @@ $date_mtn = date('Y-m-d');
         </div>
         <div class="col-sm-2 col-xs-12 text-center">
             <label for="mode_de_paiment">Moyen de paiement :</label>
-            <input type="text" class="form-control" id="mode_de_paiment"  name="mode_de_paiment"></div>
+            <input type="text"  class="form-control" id="mode_de_paiment"  name="mode_de_paiment"></div>
         </div>
         <div class ="row">
         <div class="col-xs-12">

@@ -58,11 +58,11 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="nom">NOM :</label>
-                <input required type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+                <input required type="text" maxlength="35"  class="form-control" id="nom" name="nom" placeholder="Nom">
             </div>
             <div class="form-group col-sm-4">
                 <label for="prenom">PRENOM :</label>
-                <input required type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+                <input required type="text" maxlength="35" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
             </div>
             <div class="form-group col-sm-4">
             <label for="provenance">Provenance :</label>
@@ -75,17 +75,17 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-8">
                 <label for="adresse">ADRESSE :</label>
-                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse">
+                <input type="text" maxlength="100" class="form-control" id="adresse" name="adresse" placeholder="Adresse">
             </div>
         </section>
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="cp">CODE POSTAL :</label>
-                <input required type="text" class="form-control" id="cp" name="cp" placeholder="Code Postal">
+                <input required type="text" maxlength="5" class="form-control" id="cp" name="cp" placeholder="Code Postal">
             </div>
             <div class="form-group col-sm-4">
                 <label for="ville">VILLE :</label>
-                <input required type="text" class="form-control" id="ville" name="ville" placeholder="Ville">
+                <input required type="text" maxlength="60" class="form-control" id="ville" name="ville" placeholder="Ville">
             </div>
             <div class="col-sm-offset-1 col-sm-2">
                 <button type="submit" class="btn btn-success hidden-xs">Enregistrer le nouveau client</button>
@@ -94,17 +94,17 @@ if (!empty($_POST)){
         <section class="row">
             <div class="form-group col-sm-4">
                 <label for="tel">TELEPHONE :</label>
-                <input type="text" class="form-control" id="tel" name="tel" placeholder="N° téléphone">
+                <input type="text" maxlength="12" class="form-control" id="tel" name="tel" placeholder="N° téléphone">
             </div>
             <div class="form-group col-sm-4">
                 <label for="email">EMAIL :</label>
-                <input required type="email" class="form-control" id="email" name="email" placeholder="Adresse Email">
+                <input required type="email" maxlength="80" class="form-control" id="email" name="email" placeholder="Adresse Email">
             </div>
         </section>
         <section class="row">
             <div class="form-group col-sm-8">
                 <label for="note">NOTE :</label>
-                <textarea name="note" id="note" class="form-control"  rows="10"></textarea>
+                <textarea name="note" maxlength="5000" id="note" class="form-control"  rows="10"></textarea>
             </div>
         </section>
         <div class="col-sm-offset-1 col-sm-2">
