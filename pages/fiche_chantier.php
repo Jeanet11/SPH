@@ -130,7 +130,6 @@ if (!empty($_POST)){
         </ul> 
         <ul class="list-group col-sm-2 hidden-xs">
             <li class="list-group-item"><strong>Nature des travaux</strong></li>
-            <li class="list-group-item">Description</li>
             <li class="list-group-item">Prix</li>
             <li class="list-group-item">Date Devis</li>
             <li class="list-group-item">Date Travaux</li>            
@@ -138,7 +137,6 @@ if (!empty($_POST)){
         </ul>
         <ul class="list-group col-sm-4 col-xs-12">
             <li class="list-group-item text-uppercase" id="titre"><strong><?= $result_info_chantier["tra_titre"] ?></strong></li>
-            <li class="list-group-item" id="description"><?= $result_info_chantier["tra_description"] ?></li>
             <li class="list-group-item" id="prix"><?= $result_info_chantier["tra_prix"] ?>€</li>
             <li class="list-group-item" id="date"><?= $result_info_chantier["date_devis"] ?></li>
             <li class="list-group-item" id="date"><?= $result_info_chantier["date"] ?></li>            
