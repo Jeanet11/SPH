@@ -11,12 +11,12 @@ if (!empty($_POST))
     include ('assets/templates/tryCatch.php');
 
     $id_client = htmlspecialchars($_GET['id']);
-    $titre = htmlspecialchars($_POST['nom_du_chantier']);
+    $titre = htmlspecialchars($_POST['nom_du_chantier'], ENT_QUOTES);
     $date_debut = htmlspecialchars($_POST['date']);
     $date_devis = htmlspecialchars($_POST['date_devis']);    
     $date_rappel = date('Y-m-d',strtotime('+12 month',strtotime($date_debut)));
-    $description = htmlspecialchars($_POST['notes']);
-    $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment']);
+    $description = htmlspecialchars($_POST['notes'], ENT_QUOTES);
+    $mode_de_paiment = htmlspecialchars($_POST['mode_de_paiment'], ENT_QUOTES);
     $prix = str_replace(',', '.', htmlspecialchars($_POST['montant']));
 
     $sql_creation_chantier = sprintf('INSERT INTO tra_travaux (cli_oid, tra_titre, tra_date_debut, tra_date_devis, tra_date_rappel, tra_description, tra_mode_paiment, tra_prix, tra_verif) 

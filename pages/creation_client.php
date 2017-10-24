@@ -9,20 +9,20 @@ if (!empty($_POST)){
     include('assets/templates/tryCatch.php');
 
     //définition des varialble récupé via la methode POST
-    $nom = htmlspecialchars($_POST["nom"]);
-    $prenom = htmlspecialchars($_POST["prenom"]);
+    $nom = htmlspecialchars($_POST["nom"], ENT_QUOTES);
+    $prenom = htmlspecialchars($_POST["prenom"], ENT_QUOTES);
     $provenance = htmlspecialchars($_POST["provenance"]);
-    $adresse = htmlspecialchars($_POST["adresse"]);
+    $adresse = htmlspecialchars($_POST["adresse"], ENT_QUOTES);
     $cp = htmlspecialchars($_POST["cp"]);
-    $ville = htmlspecialchars($_POST["ville"]);
+    $ville = htmlspecialchars($_POST["ville"], ENT_QUOTES);
     $tel = htmlspecialchars($_POST["tel"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $note = htmlspecialchars($_POST["note"]);
+    $email = htmlspecialchars($_POST["email"], ENT_QUOTES);
+    $note = htmlspecialchars($_POST["note"], ENT_QUOTES);
 
     //Création de la requete SQL pour ajouter le client
-    $sql_ajout_client = sprintf("INSERT INTO `cli_client` (`cli_nom`, `cli_prenom`, 
-    `cli_email`, `cli_adresse`, `cli_cp`, `cli_ville`, `cli_tel`, `cli_commentaire`, 
-    `cli_provenance`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
+    $sql_ajout_client = sprintf("INSERT INTO cli_client (cli_nom, cli_prenom, 
+    cli_email, cli_adresse, cli_cp, cli_ville, cli_tel, cli_commentaire, 
+    cli_provenance) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
     $nom, $prenom, $email, $adresse, $cp, $ville, $tel, $note, $provenance);
 
     //Exécution de la requete
