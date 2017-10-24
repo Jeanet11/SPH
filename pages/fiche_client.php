@@ -6,10 +6,8 @@ if (empty($_SESSION['uti_pseudo'])){
 //-------------------DEBUT TRAITEMENT POUR AFFICHAGE INFO CLIENT ET CHANTIER-------------------
 //recupération de l'id client
 $id = htmlspecialchars((int)$_GET["id"]);
-
 //include de la page de connexion a la bdd ($bdd)
 include('assets/templates/tryCatch.php');
-
 //requete sql pour récupéré les informations clients
 $sql_info_client = sprintf("SELECT * FROM cli_client WHERE cli_oid = %d",$id);
 //execute la requete sql du client
@@ -21,7 +19,6 @@ catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 };
-
 //requete sql pour récupéré les infos chantier
 $sql_info_chantier = sprintf("SELECT tra_prix, tra_oid, tra_titre, 
 DATE_FORMAT(tra_date_devis, '%%d/%%m/%%Y') AS date,
@@ -36,7 +33,6 @@ catch (Exception $e)
 {
     die('Erreur : ' . $e->getMessage());
 };
-
 //définition des varialble récupéré via la requete SQL
 $nom = $result_info_client["cli_nom"];
 $prenom = $result_info_client["cli_prenom"];
@@ -81,7 +77,7 @@ if(!empty($_POST)){
 <section class="container">
 
 <form class=""  method="POST" action="?p=recherche_client">
-        <input type="text" class="hidden form-control" placeholder="Rechercher un client par son nom" size="50" id="nom" name="recherche"/>
+        <input type="text" class="hidden form-control" placeholder="Rechercher un client par son nom" size="50" id="recherche" name="recherche"/>
     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Liste des clients</button>
 </form>
 
