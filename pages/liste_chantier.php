@@ -116,13 +116,13 @@ while  ($donnees = $reponse->fetch()){
     $table .= "
     <a href='?p=fiche_client&id=".$donnees['cli_oid']."' class='inLine'>
     <ul class='list-inline'>
-        <li class='col-sm-2 col-xs-3'>" . $donnees['jourD'] ."/".$donnees['moisD']."/". $donnees['anneeD']. "</li>
+        <li class='col-sm-2 col-xs-12'>" . $donnees['jourD'] ."/".$donnees['moisD']."/". $donnees['anneeD']. "</li>
         <li class='col-sm-2 col-xs-12'>" . $donnees['jour'] ."/" . $donnees['mois'] . "/" . $donnees['annee'] . "</li>
         <li class='col-sm-2 hidden-xs text-uppercase'>" . $donnees['cli_nom'] . "</li>
         <li class='col-sm-2 hidden-xs'>" . $donnees['cli_prenom'] . "</li>
         <li class='col-xs-12 visible-xs'><span class='text-uppercase'><strong>" . $donnees['cli_nom']. "</strong></span> ". $donnees['cli_prenom'] . "</li>        
         <li class='col-sm-2 col-xs-12'>" . $donnees['cli_email'] . "</li>
-        <li class='col-sm-2 col-xs-8''>" . $donnees['cli_ville'] . "</li>
+        <li class='col-sm-2 col-xs-12''>" . $donnees['cli_ville'] . "</li>
     </ul>
     <div class='col-xs-12 visible-xs' id='hoverL'></div>
     </a>";
