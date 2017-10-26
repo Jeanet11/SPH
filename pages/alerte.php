@@ -60,7 +60,7 @@ ORDER BY tra_date_debut');
 
                                     $test = "    <a href='?p=fiche_client&id=" . $ligne['cli_oid'] . "' class='inLine'>
                 <ul class='list-inline'>
-                    <li class='col-sm-2 col-xs-3'>"
+                    <li class='col-sm-2 col-xs-12'>"
                                         . $ligne['jourD'] . '/' . $ligne['moisD'] . '/' . $ligne['anneeD'] . "
                     </li>
                     <li class='col-sm-2 col-xs-12'>"
